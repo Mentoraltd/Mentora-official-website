@@ -1,0 +1,115 @@
+.navContainer {
+    position: fixed;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    box-sizing: border-box;
+    display: flex;
+    font-family: inherit;
+    height: calc(5rem + 1px);
+    padding: 0 3rem;
+    width: 100%;
+    top: 0;
+    z-index: 9;
+}
+
+.nav-Scrolled {
+    border-bottom: 2px solid #1e2ede; /* Adjust color and thickness as needed */
+}
+
+.companyLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: auto;
+}
+
+.companyLogo .logo{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navListContainer {
+    display: flex;
+    flex: 1 1;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.navListContainer ul{
+    display: flex;
+    flex: 1 1;
+    gap: 1rem;
+    list-style: none;
+    margin: 0 3rem;
+    -webkit-padding-start: 0;
+    padding-inline-start: 0;
+}
+
+.navListContainer li{
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #1c1c1c;
+    display: flex;
+    font-size: .875rem;
+    height: auto;
+    line-height: 1.25rem;
+    margin: 0;
+    min-height: 2rem;
+    padding: 0 .75rem;
+    position: relative;
+    text-align: center;
+    width: auto;
+}
+
+.navCTAbutton {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.navCTAbutton li{
+    font-weight: 700;
+}
+
+.CtaButton{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PrimaryButtonWhiteText24 {
+    background: #1e2ede;
+    border: 1px solid transparent;
+    color: #fff;
+    outline: none;
+    text-wrap: nowrap;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.navListContainer li, .navCTAbutton li {
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #1c1c1c;
+    display: flex;
+    font-size: .875rem;
+    height: auto;
+    line-height: 1.25rem;
+    margin: 0;
+    min-height: 2rem;
+    padding: 0 .75rem;
+    position: relative;
+    text-align: center;
+    width: auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .navContainer .navListContainer ul {
+        margin: 0 1.5rem;
+      }
+}
