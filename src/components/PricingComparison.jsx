@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion"; 
 import { pricingData } from "./data";
 
 const PricingPage = () => {
@@ -8,23 +9,28 @@ const PricingPage = () => {
   const faqs = [
     {
       question: "What is included in the free trial?",
-      answer: "The free trial gives you access to selected AI-curated courses and limited AI chatbot interactions. You can explore the platform before committing to a plan.",
+      answer:
+        "The free trial gives you access to selected AI-curated courses and limited AI chatbot interactions. You can explore the platform before committing to a plan.",
     },
     {
       question: "Can I upgrade or downgrade my plan anytime?",
-      answer: "Yes! You can upgrade or downgrade your subscription at any time through your account settings. Changes will apply at the next billing cycle.",
+      answer:
+        "Yes! You can upgrade or downgrade your subscription at any time through your account settings. Changes will apply at the next billing cycle.",
     },
     {
       question: "Is the AI chatbot available 24/7?",
-      answer: "Absolutely! Our AI chatbot is available 24/7 to assist with your studies. However, usage limits may apply based on your subscription plan.",
+      answer:
+        "Absolutely! Our AI chatbot is available 24/7 to assist with your studies. However, usage limits may apply based on your subscription plan.",
     },
     {
       question: "Do you offer refunds?",
-      answer: "We offer a 7-day money-back guarantee for first-time subscribers. If you're not satisfied, simply contact our support team within 7 days of your purchase.",
+      answer:
+        "We offer a 7-day money-back guarantee for first-time subscribers. If you're not satisfied, simply contact our support team within 7 days of your purchase.",
     },
     {
       question: "How does the Enterprise plan work?",
-      answer: "The Enterprise plan is custom-built for organizations. It includes unlimited AI chatbot access for teams, tailored AI learning paths, on-site workshops, and dedicated support. Contact our sales team for a personalized quote.",
+      answer:
+        "The Enterprise plan is custom-built for organizations. It includes unlimited AI chatbot access for teams, tailored AI learning paths, on-site workshops, and dedicated support. Contact our sales team for a personalized quote.",
     },
   ];
 
@@ -36,14 +42,14 @@ const PricingPage = () => {
     <div className="flex flex-col min-h-screen bg-gray-50">
       
       {/* --- HERO SECTION --- */}
-      <section className="bg-gradient-to-b from-blue-100 via-white to-white py-20 px-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 leading-tight">
+      <section className="bg-gradient-to-b from-blue-100 via-white to-white py-16 px-4 sm:px-6 text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 leading-tight">
           Learn Smarter with Mentora: <br />AI Personalized Study Support at Your Fingertips
         </h1>
-        <p className="text-lg text-gray-600 mb-8">
+        <p className="text-base sm:text-lg text-gray-600 mb-8">
           Start free today and experience the future of education with your personal AI Study Assistant.
         </p>
-        <div className="flex flex-col md:flex-row justify-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
           <button className="bg-black text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-800 transition">
             Start Free Trial
           </button>
@@ -57,23 +63,23 @@ const PricingPage = () => {
       </section>
 
       {/* --- PRICING SECTION --- */}
-      <section className="flex justify-center items-center p-10">
+      <section className="flex justify-center items-center p-6 sm:p-10">
         <div className="w-full max-w-7xl">
           
           {/* Payment Toggle */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-10 sm:mb-12">
             <div className="bg-gray-200 p-2 rounded-full flex">
               <button className="px-6 py-2 rounded-full bg-white text-gray-800 font-semibold hover:bg-gray-300 transition">
                 Pay monthly
               </button>
               <button className="px-6 py-2 rounded-full bg-black text-white font-semibold hover:bg-gray-700 transition">
-                Pay yearly (save 25%)* 
+                Pay yearly (save 25%)*
               </button>
             </div>
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {plans.map((plan, index) => (
               <div
                 key={index}
@@ -112,36 +118,80 @@ const PricingPage = () => {
         </div>
       </section>
 
-      {/* --- FAQ SECTION --- */}
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-12">
-            Frequently Asked Questions
-          </h2>
+     {/* --- FAQ SECTION --- */}
+<section className="bg-white py-16 px-4 sm:px-6">
+  <div className="max-w-5xl mx-auto">
+    <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-12">
+      Frequently Asked Questions
+    </h2>
 
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border-b pb-4">
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full flex justify-between items-center text-left"
-                >
-                  <span className="text-xl font-semibold text-gray-900">
-                    {faq.question}
-                  </span>
-                  <span className="text-2xl text-gray-400">
-                    {openFAQ === index ? "−" : "+"}
-                  </span>
-                </button>
-                {openFAQ === index && (
-                  <p className="mt-4 text-gray-600 transition-all duration-300">{faq.answer}</p>
-                )}
-              </div>
-            ))}
-          </div>
+    <div className="space-y-6">
+      {faqs.map((faq, index) => (
+        <div key={index} className="border-b pb-4">
+          <button
+            onClick={() => toggleFAQ(index)}
+            className="w-full flex justify-between items-center text-left"
+          >
+            <span className="text-lg sm:text-xl font-semibold text-gray-900">
+              {faq.question}
+            </span>
+            <span className="text-2xl text-gray-400">
+              {openFAQ === index ? "−" : "+"}
+            </span>
+          </button>
 
+          {/* Animate answer */}
+          <AnimatePresence initial={false}>
+            {openFAQ === index && (
+              <motion.div
+                key="content"
+                initial="collapsed"
+                animate="open"
+                exit="collapsed"
+                variants={{
+                  open: { opacity: 1, height: "auto" },
+                  collapsed: { opacity: 0, height: 0 },
+                }}
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+
+                className="overflow-hidden"
+              >
+                <p className="mt-4 text-gray-600 text-sm sm:text-base">
+                  {faq.answer}
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+      {/* --- FINAL CALL TO ACTION --- */}
+      <motion.section
+  className="bg-gradient-to-b from-white via-white to-gray-200 py-16 px-6 mt-10 text-center text-gray-800"
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
+  <h2 className="text-4xl font-bold mb-4 italic">
+    Ready to unlock your AI-powered learning journey?
+  </h2>
+  <p className="text-lg mb-8 italic">
+    Join thousands of learners mastering their skills with Mentora.
+  </p>
+
+  <button className="bg-white text-black font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition">
+    Get Started for Free
+  </button>
+</motion.section>
+      {/* --- FOOTER --- */}
+      <footer className="bg-gradient-to-b from-white via-white to-blue-100 text-center text-gray-500 py-6 text-xs sm:text-sm mt-8">
+        © {new Date().getFullYear()} Mentora. All rights reserved.
+      </footer>
 
     </div>
   );
