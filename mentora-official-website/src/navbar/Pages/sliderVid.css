@@ -1,0 +1,187 @@
+/* ImageSlider.css */
+.image-slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s linear 1 forwards;
+    animation-delay: calc(0.2s * var(--i));
+    opacity: 0;
+    position: relative;
+  }
+  
+  .image-container {
+    width: 60%; /* Adjust as needed */
+    height: 50vh; /* Adjust as needed */
+    overflow: hidden; /* Clip the shrinking image */
+    position: relative; /* For absolute positioning of transition effects if needed */
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
+  }
+
+  .videoMain{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .image-container.fade-out img {
+    opacity: 0;
+    transform: scale(0.9); /* Optional: slightly shrink while fading out */
+  }
+  
+  .image-container img.shrink-in {
+    transform: scale(1); /* Ensure it scales back to normal */
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  .slidersButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .popup-list {
+    position: absolute;
+    background-color: #0d1117;
+    border: 1px solid #0d1117;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    width: 40%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .popup-item-container {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    background: transparent; /* Vertically align items */
+  }
+  
+  .popup-item {
+    display: block;
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    flex-grow: 1; /* Allow button to take available space */
+    color: #fff;
+    font-family: "Mona Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 450;
+  }
+  
+  .popup-item:hover {
+    border: 1px solid #f0f0ff;
+    border-radius: 10px;
+  }
+  
+  .slide-button {
+    display: none;
+    width: 140px;
+    padding: 10px 20px;
+    background: none;
+    border: 1px solid #0d1117;
+    color: #000;
+    cursor: pointer;
+    border-radius: 60px;
+    font-family: "Mona Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 450;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .popup-listWideScreen{
+    display: none;
+    width: 100%;
+    justify-content: space-between;
+    padding: auto 20px;
+    background-color: #0d1117;
+    border-radius: 60px;
+  }
+
+  .popup-listWideScreen   .popup-item{
+    transition: 0.3s ease;
+  }
+
+  .popup-listWideScreen   .popup-item:hover {
+    border: none;
+    color: #b8b8b8;
+  }
+
+  .popup-listWideScreen   .popup-item-container {
+    padding: 8px;
+  }
+  
+  .current-slide-icon {
+    background-color: transparent;
+    margin-left: 8px; /* Add some space between button and icon */
+    color: #f0f0ff; /* Or any color you prefer */
+  }
+
+  .mobile-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+  }
+  
+  .mobile-nav-buttons button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .prev{
+    transform: rotate(90deg);
+    font-size: 24px;
+  }
+
+  .next{
+    transform: rotate(-90deg);
+    font-size: 24px;
+  }
+
+  .multi-progress-bar {
+    display: flex;
+    width: 60%;
+    height: 5px;
+    margin-top: 10px;
+    gap: 4px;
+  }
+  
+  .progress-segment-wrapper {
+    flex: 1;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .progress-segment {
+    height: 100%;
+    background-color: #007bff;
+    transition: width 0.1s linear;
+  }
+  
+  
+  @media screen and (min-width: 769px) {
+    .mobile-nav-buttons {
+      display: none;
+    }
+  }
+  

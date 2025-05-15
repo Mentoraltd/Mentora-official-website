@@ -1,20 +1,20 @@
 .navContainer {
     position: fixed;
     align-items: center;
-    background-color: #fff;
+    background-color: #f4f7fc;
     border: none;
     box-sizing: border-box;
     display: flex;
     font-family: inherit;
     height: calc(5rem + 1px);
-    padding: 0 3rem;
+    padding: 0 2rem;
     width: 100%;
     top: 0;
-    z-index: 9;
+    z-index: 999;
 }
 
 .nav-Scrolled {
-    border-bottom: 2px solid #1e2ede; /* Adjust color and thickness as needed */
+    border-bottom: 2px solid #1c1c1c; /* Adjust color and thickness as needed */
 }
 
 .companyLogo{
@@ -37,10 +37,10 @@
     justify-content: space-between;
 }
 
-.navListContainer ul{
+.navListContainer .uList{
     display: flex;
     flex: 1 1;
-    gap: 1rem;
+    gap: 0.5rem;
     list-style: none;
     margin: 0 3rem;
     -webkit-padding-start: 0;
@@ -57,11 +57,15 @@
     height: auto;
     line-height: 1.25rem;
     margin: 0;
+    gap: 10px;
     min-height: 2rem;
     padding: 0 .75rem;
     position: relative;
     text-align: center;
     width: auto;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s ease-in;
 }
 
 .navCTAbutton {
@@ -72,6 +76,17 @@
 
 .navCTAbutton li{
     font-weight: 700;
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
+}
+
+.navCTAbutton li:hover::after{
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: #1e2ede;
+    bottom: 0;
 }
 
 .CtaButton{
@@ -89,6 +104,20 @@
     text-wrap: nowrap;
     padding: 0.5rem;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.PrimaryButtonWhiteText24:hover{
+    gap: 20px;
+    background: #1b2aca;
+}
+
+.MdOutlineArrowForward{
+    color: #fff;
+    background: transparent;
 }
 
 .navListContainer li, .navCTAbutton li {
@@ -108,8 +137,341 @@
     width: auto;
 }
 
+.openNav{
+    display: none;
+}
+
+.mobileNav{
+    display: none;
+}
+
+
+/* ------- DROPDOWN ------------ */
+
+.list {
+    align-items: center;
+    display: flex;
+    font-size: .875rem;
+    text-align: center;
+    gap: 10px;
+    position: relative;
+}
+
+.dropDown{
+    position: absolute;
+    display: flex;
+    top: 60px;
+    left: -20px;
+    width: 250px;
+    height: auto;
+    background: #fff;
+    z-index: 999;
+    box-shadow: 0 2px 12px .5px rgba(135,141,162,.25),0 1px 8px .5px rgba(135,141,162,.1),0 0 2px .5px rgba(135,141,162,.5),0 0 0 .5px #878da2;
+}
+
+.leftDropDown{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px ;
+}
+
+.leftDropDown ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    height: auto;
+    gap: 30px;
+    margin: 0;
+}
+
+.leftDropDown ul li{
+    cursor: pointer;
+    font-size: 18px;
+    color: #1c1c1ccb;
+}
+
 @media screen and (max-width: 1024px) {
-    .navContainer .navListContainer ul {
+    .navListContainer ul {
         margin: 0 1.5rem;
       }
 }
+
+@media screen and (max-width: 956px) {
+    .navListContainer{
+        display: none;
+    }
+    .navListContainer ul{
+        display: none;
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content: left;
+        position: sticky;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 70%;
+        padding: 120px 20px 20px 20px;
+        z-index: 99;
+        gap: 60px;
+        margin: 0 0;
+    }
+
+    .navListContainer ul li{
+        font-family: "Mona Sana", sans-serif;
+        font-size: 18px;
+        color: var(--light);
+        font-weight: 450;
+        padding-left: 60px;
+    }
+
+   .navContainer{
+        position: fixed;
+        justify-content: space-between;
+        gap: 30%;
+        
+    }
+
+    .companyLogo {
+        background-color: transparent;
+    }
+
+
+    .navCTAbutton li{
+        text-wrap: nowrap;
+    }
+
+    .openNav{
+        display: flex;
+        padding: 10px;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hamburgerOpen{
+        font-size: 26px;
+    }
+
+    .mobileNav.open{
+        display: flex;
+        transform: translateX(0);
+        transition: 0.3s ease-in-out;
+    }
+
+    .close{
+        display: none;
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    .mobileNav{
+        position: fixed;
+        align-items: center;
+        justify-content: space-between;  
+        width: 70%;
+        height: 100vh;  
+        z-index: 999;
+        top: 0;
+        right: 0;
+        background-color: #1e2ede;
+        transform: translateX(100%);
+        transition: 0.3s ease-in-out;
+    }
+
+    .mobileNav .navListContainer{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    .mobileNav ul{
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        gap: 40px;
+        width: 100%;
+    }
+
+    .mobileNav ul li{
+        background: transparent;
+        width: 100%;
+        padding-left: 20px;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        padding: 10px;
+    }
+
+    .mobileNav ul li:hover{
+        background-color: #1a27b8;
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobileNav .navCTAbutton{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .navCTAbutton li {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+        cursor: pointer;
+        background-color: #fff;
+        
+    }
+
+    .mobileNav .PrimaryButtonWhiteText24{
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+    }
+
+    .closeNav{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 9999;
+    }
+
+    .mobileNav .hamburgerOpen{
+        font-size: 32px;
+        color: #fff;
+    }
+
+    .mobileNav ul .navlist{
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .mobileNav .navlist  {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .mobileNav .navlist .list{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-family: "Mona Sana", sans-serif;
+        font-size: 18px;
+        font-weight: 450;
+    }
+
+    .mobileNav .navlist ul{
+        padding-top: 30px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .navContainer{
+        gap: 15%;
+    }
+
+    .mobileNav{
+        width: 100%;
+     }
+    
+}
+
+@media screen and (max-width: 560px) {
+
+}
+
+/*    .navContainer .navListContainer{
+        display: none;
+    }
+
+    .mobileNav{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;  
+        width: 80%;
+        height: 100vh;  
+        z-index: 999;
+    }
+
+    .mobileNav .navListContainer{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #1e2ede;
+        padding: 20px 10px;
+    }
+
+    .mobileNav ul{
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        gap: 40px;
+        width: 100%;
+    }
+
+    .mobileNav ul li{
+        background: transparent;
+        width: 100%;
+        padding-left: 0;
+        cursor: pointer;
+    }
+
+    .mobileNav li span{
+        background: transparent;
+    }
+
+    .mobileNav .navCTAbutton{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .navCTAbutton li {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+        transition: 0.3s ease;
+        cursor: pointer;
+    }
+
+    .mobileNav ul li:hover{
+        background-color: #fff;
+        padding: 10px;
+    }
+
+    .mobileNav ul li:hover span{
+        color: #000;
+    }
+
+    .mobileNav .PrimaryButtonWhiteText24{
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+    }*/
+

@@ -1,0 +1,170 @@
+.footer{
+    width: 100vw;
+    height:auto;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+    position: relative;
+    bottom: 0;
+    background-color: #010409;
+}
+
+.footerContainer{
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    width: 85%;
+    height: auto;
+}
+
+.desc{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.brand{
+    display: flex;
+    gap: 20px;
+}
+
+.brand span{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.brand img{
+    width: 40px;
+}
+
+.desc .text{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+
+.desc .inc{
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.company{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+header{
+    font-size: 16px;
+    font-weight: 600;
+    color: #ccc;
+}
+
+.company ul{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+}
+
+.company ul li{
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.2s ease-in-out;
+}
+
+.company li:hover{
+    color: #c7c7c7;
+    text-decoration: underline;
+}
+
+.connect{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.connect .socials{
+    display: flex;
+    gap: 10px;
+}
+
+.links{
+    display: flex;
+    width: 50%;
+    height: auto;
+    align-items: top;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+
+.socials span{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .footerContainer {
+        width: 85%;
+    }
+
+    .desc .text {
+        font-size: 22px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .desc .text {
+        font-size: 14px;
+    }
+
+    .footer {
+        padding: 5rem 0;
+    }
+
+    .desc{
+        gap: 60px;
+    }
+
+    .company ul {
+        gap: 20px;
+    }
+
+    .company ul li {
+        font-size: 14px;
+    }
+
+     .socials span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .footerContainer {
+        width: 95%;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .desc {
+        width: 90%;
+        gap: 20px;
+    }
+
+    .links{
+        width: 90%;
+        margin-bottom: 60px;
+        margin-left: 10px;
+    }
+
+    .inc{
+        margin-top: 30px;
+    }
+}

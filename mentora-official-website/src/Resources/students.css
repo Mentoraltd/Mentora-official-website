@@ -1,0 +1,467 @@
+.studentsHero{
+    width: 100%;
+    height: 130vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #010409;
+    padding-bottom: 60px;
+}
+
+.studentCont{
+    width: 60%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.firstContainer{
+    width: 48%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: #fff;
+}
+
+.firstContainer h2{
+    font-size: 38px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    line-height: 48px;
+    letter-spacing: 5px;
+}
+
+.firstContainer span{
+    font-family: "Mona Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 2px;
+}
+
+.DownloadBtn{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.DownloadBtn button{
+    width: 45%;
+    height: 50px;
+    background-color: #fff;
+    color: #010409;
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    color: #041025;
+    cursor: pointer;
+}
+
+.DownloadBtn button .DapkFontStyle{
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Mona Sans", sans-serif;
+    color: #000;
+}
+
+.seccondContainer{
+    width: auto;
+    height: auto;
+}
+
+.studentsHero .secondContainer img{
+    width: 600px;
+    height: 500px;
+    border-radius: 6px;
+}
+
+.mvpOutline{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    height: auto;
+    gap: 30px;
+}
+
+.mvpCont{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: auto;
+    color: #fff;
+    gap: 20px;
+}
+
+.mvpCont .icon{
+    width: 80px;
+    height: 80px;
+}
+
+.mvpCont .mvpTxt{
+    color: #fff;
+    font-family: "Mona Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 2px;
+}
+
+
+/* Ai Spec */
+
+.AiSpec{
+    width: 60%;
+    height: auto;
+    margin: 180px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.specHeader{
+    width: 80%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.specHeader h2{
+    font-family: "Mona Sans", sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.specHeader p{
+    font-family: "Mona Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.specBody{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.specBodyTop{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-bottom: 2px solid #010409;
+}
+
+.specBodyTop h4{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Mona Sans", sans-serif;
+    letter-spacing: 2px;
+    position: relative;
+    padding-left: 10px;
+}
+
+.specBodyTop h4::after{
+    content: "";
+    position: absolute;
+    bottom: -23px;
+    left: 0;
+    width: 150px;
+    height: 5px;
+    background-color: #010409;
+}
+
+.specBodyTop span{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Mona Sans", sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+.specDropDown{
+    position: absolute;
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #010409;
+    color: #fff;
+    width: auto;
+    padding: 10px 0;
+    height: auto;
+    border-radius: 6px;
+}
+
+.specDropDown div{
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.specDropDown div:hover{
+    color: #d3d3d3;
+}
+
+.specBodyCont{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.bodyContLeft{ 
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bodyContLeft h4{
+    font-size: 34px;
+    font-weight: 600;
+    font-family: "Mona Sans", sans-serif;
+}
+
+.bodyContLeft p{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Mona Sans", sans-serif;
+    line-height: 24px;
+}
+
+.bodyContLeft span{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Mona Sans", sans-serif;
+    color: #404041;
+    align-self: flex-start;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.bodyContRight{
+    width: 40%;
+    height: auto;
+}
+
+.bodyContRight img{
+    width: 100%;
+    height: 400px;
+}
+
+/* CTA SECTION */
+.CtaSection{
+    width: 100%;
+    height: 500px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #010409;
+}
+.CtaSectionCont{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    height: auto;
+    gap: 20px;
+    justify-content: center;
+}
+
+.ctaRight{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.ctaRight h2{
+    font-size: 35px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    line-height: 44px;
+}
+
+.ctaRight p{
+    font-family: "Mona Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+}
+
+.LearnMore{
+    width: 45%;
+    height: 50px;
+    background-color: #fff;
+    color: #010409;
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width: 1783px) {
+    .studentCont {
+        width: 80%;
+    }
+
+    .mvpOutline {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .firstContainer h2 {
+        font-size: 28px;
+    }
+        
+    .DownloadBtn {
+        flex-direction: column;
+    }
+
+    .DownloadBtn button {
+        width: 100%;
+    }
+
+    .studentsHero .secondContainer img {
+        width: 400px;
+        height: 400px;
+        border-radius: 6px;
+    }
+
+    .AiSpec {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .studentsHero {
+        height: auto;
+    }
+
+    .studentCont {
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 150px;
+    }
+
+    .firstContainer {
+        width: 100%;
+    }
+
+    .studentsHero .secondContainer img {
+        width: 100%;
+        height: 400px;
+    }
+
+    .mvpOutline {
+        flex-direction: column;
+        width: 100%;
+        margin: 40px 0;
+        gap: 40px;
+    }
+
+    .mvpCont {
+        width: 80%;
+        flex-direction: row;
+    }
+
+    .specHeader {
+        width: 100%;
+    }
+
+    .AiSpec {
+        gap: 80px;
+    }
+
+    .specBody {
+        gap: 60px;
+    }
+
+    .specBodyCont {
+        flex-direction: column;
+    }
+
+    .bodyContLeft, .bodyContRight {
+        width: 100%;
+    }
+
+    .bodyContLeft p {
+        line-height: 28px;
+    }
+
+    .ctaRight h2 {
+        text-align: center;
+    }
+
+    .CtaSectionCont {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .specHeader h2 {
+        font-size: 24px;
+    }
+
+    .CtaSectionCont {
+        width: 90%;
+    }
+
+    .ctaRight {
+        width: 100%;
+    }
+
+    .ctaRight h2 {
+        text-align: center;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    
+}

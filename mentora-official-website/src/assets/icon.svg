@@ -1,0 +1,39 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1928_13977)">
+<g clip-path="url(#clip1_1928_13977)">
+<path d="M31.8313 40.3345L44.3637 47.6451" stroke="#A8A8A8" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M31.8313 29.8911L44.3637 22.5805" stroke="#A8A8A8" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M25.2134 19.0425H3.53729C1.85998 19.0425 0.500244 20.5191 0.500244 22.3406V52.4464C0.500244 54.268 1.85998 55.7446 3.53729 55.7446H25.2134C26.8907 55.7446 28.2505 54.268 28.2505 52.4464V22.3406C28.2505 20.5191 26.8907 19.0425 25.2134 19.0425Z" fill="white" stroke="#A8A8A8" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M29.3311 14.5239H8.29374C6.66585 14.5239 5.34619 15.9943 5.34619 17.808V47.7856C5.34619 49.5994 6.66585 51.0698 8.29374 51.0698H29.3311C30.959 51.0698 32.2787 49.5994 32.2787 47.7856V17.808C32.2787 15.9943 30.959 14.5239 29.3311 14.5239Z" fill="white" stroke="#A8A8A8" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M10.7554 21.9751H26.8685" stroke="#A8A8A8" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M10.7554 28.79H26.8685" stroke="#A8A8A8" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M10.7554 36.0083H26.8685" stroke="#A8A8A8" stroke-width="1.5" stroke-miterlimit="10"/>
+<g clip-path="url(#clip2_1928_13977)">
+<rect x="41.678" y="43.0312" width="25.822" height="25.8222" rx="12.911" fill="white"/>
+<ellipse cx="54.5886" cy="65.3335" rx="10.0605" ry="10.0606" fill="#D5FF00" fill-opacity="0.8" stroke="#A8A8A8" stroke-width="1.25215"/>
+<ellipse cx="54.5895" cy="52.5912" rx="5.36562" ry="5.36565" fill="white" stroke="#A8A8A8" stroke-width="1.25215"/>
+</g>
+<rect x="41.678" y="43.0312" width="25.822" height="25.8222" rx="12.911" stroke="#A8A8A8" stroke-width="1.5"/>
+<g clip-path="url(#clip3_1928_13977)">
+<rect x="41.678" y="1.99121" width="25.822" height="25.8222" rx="12.911" fill="white"/>
+<ellipse cx="54.5886" cy="24.293" rx="10.0605" ry="10.0606" fill="#D5FF00" fill-opacity="0.8" stroke="#A8A8A8" stroke-width="1.25215"/>
+<ellipse cx="54.5895" cy="11.5507" rx="5.36562" ry="5.36565" fill="white" stroke="#A8A8A8" stroke-width="1.25215"/>
+</g>
+<rect x="41.678" y="1.99121" width="25.822" height="25.8222" rx="12.911" stroke="#A8A8A8" stroke-width="1.5"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_1928_13977">
+<rect width="70" height="70" fill="white"/>
+</clipPath>
+<clipPath id="clip1_1928_13977">
+<rect width="70" height="70" fill="white" transform="translate(-1.5 -0.0078125)"/>
+</clipPath>
+<clipPath id="clip2_1928_13977">
+<rect x="41.678" y="43.0312" width="25.822" height="25.8222" rx="12.911" fill="white"/>
+</clipPath>
+<clipPath id="clip3_1928_13977">
+<rect x="41.678" y="1.99121" width="25.822" height="25.8222" rx="12.911" fill="white"/>
+</clipPath>
+</defs>
+</svg>
