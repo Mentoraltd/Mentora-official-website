@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion"; 
 import { pricingData } from "./data";
+import { motion, AnimatePresence } from "framer-motion";
 
 const PricingPage = () => {
   const { plans } = pricingData;
   const [openFAQ, setOpenFAQ] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
 
   const faqs = [
     {
@@ -34,165 +38,185 @@ const PricingPage = () => {
     },
   ];
 
-  const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
-  };
+  const features = [
+    {
+      title: "AI-Powered Study Coach",
+      description: "Get personalized feedback and guidance with an intelligent mentor that learns how you learn.",
+      icon: "🤖",
+    },
+    {
+      title: "Unlimited Practice Sets",
+      description: "Access thousands of curated questions and adaptive quizzes for deep mastery.",
+      icon: "📝",
+    },
+    {
+      title: "Progress Tracking",
+      description: "Visual dashboards and reports to help you stay on track and reach your goals.",
+      icon: "📈",
+    },
+    {
+      title: "Expert-Curated Materials",
+      description: "Study from resources designed by top educators across multiple disciplines.",
+      icon: "📚",
+    },
+    {
+      title: "Study Anywhere",
+      description: "Use Mentora seamlessly on desktop, tablet, or mobile—sync across devices.",
+      icon: "🌍",
+    },
+  ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      
-      {/* --- HERO SECTION --- */}
-      <section className="bg-gradient-to-b from-blue-100 via-white to-white py-16 px-4 sm:px-6 text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 leading-tight">
+    <div className="d-flex flex-column min-vh-100 bg-light">
+
+      {/* Hero Section */}
+      <section className="bg-white py-5 text-center px-3">
+        <h1 className="display-5 fw-bold text-dark mb-4">
           Learn Smarter with Mentora: <br />AI Personalized Study Support at Your Fingertips
         </h1>
-        <p className="text-base sm:text-lg text-gray-600 mb-8">
+        <p className="lead text-muted mb-4 fst-italic">
           Start free today and experience the future of education with your personal AI Study Assistant.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="bg-black text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-800 transition">
-            Start Free Trial
-          </button>
-          <button className="bg-gray-200 text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-300 transition">
-            Enter Your Email
-          </button>
+        <div className="d-grid gap-3 d-sm-flex justify-content-center mb-3">
+          <button className="btn btn-outline-dark px-4 py-2 fw-bold">Start Free Trial</button>
+          <button className="btn btn-dark px-4 py-2 fw-bold">Enter Your Email</button>
         </div>
-        <p className="text-xs text-gray-400 mt-4">
+        <p className="text-muted small fst-italic">
           No credit card required. By signing up, you agree to receive important updates and AI learning tips.
         </p>
       </section>
 
-      {/* --- PRICING SECTION --- */}
-      <section className="flex justify-center items-center p-6 sm:p-10">
-        <div className="w-full max-w-7xl">
-          
-          {/* Payment Toggle */}
-          <div className="flex justify-center mb-10 sm:mb-12">
-            <div className="bg-gray-200 p-2 rounded-full flex">
-              <button className="px-6 py-2 rounded-full bg-white text-gray-800 font-semibold hover:bg-gray-300 transition">
-                Pay monthly
-              </button>
-              <button className="px-6 py-2 rounded-full bg-black text-white font-semibold hover:bg-gray-700 transition">
-                Pay yearly (save 25%)*
-              </button>
-            </div>
+      {/* Pricing Section */}
+      <section className="container py-5">
+        <div className="d-flex justify-content-center mb-4">
+          <div className="btn-group">
+            <button className="btn btn-light fw-semibold">Pay monthly</button>
+            <button className="btn btn-dark fw-semibold">Pay yearly (save 25%)</button>
           </div>
+        </div>
 
-          {/* Pricing Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {plans.map((plan, index) => (
-              <div
-                key={index}
-                className="relative bg-white p-8 rounded-2xl shadow-md flex flex-col justify-between
-                  transition-all duration-300 ease-in-out transform hover:scale-105 hover:-translate-y-2 hover:shadow-2xl"
-              >
-                {/* Badges */}
-                {plan.name === "Basic" && (
-                  <div className="absolute top-4 right-4 bg-green-400 text-black text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                    Most Popular
+        <div className="row justify-content-center">
+          {plans.map((plan, index) => (
+            <div key={index} className="col-12 col-sm-6 col-md- col-lg-3 mb-4">
+              <div className="card shadow-sm h-100 border-0 position-relative">
+                <div className="card-body d-flex flex-column justify-content-between">
+                  <div>
+                    {plan.name === "Basic" && (
+                      <div className="badge bg-success text-dark position-absolute top-0 end-0 m-3">
+                        Most Popular
+                      </div>
+                    )}
+                    {plan.name === "Plus" && (
+                      <div className="badge bg-primary text-white position-absolute top-0 end-0 m-3">
+                        1- or 3-year term
+                      </div>
+                    )}
+                    <h5 className="card-title fw-bold">{plan.name}</h5>
+                    <h2 className="fw-bold mb-3">{plan.price}</h2>
+                    <p className="text-muted">{plan.subText}</p>
+                    <ul className="list-unstyled mt-3">
+                      {plan.description.map((item, i) => (
+                        <li key={i}>• {item}</li>
+                      ))}
+                    </ul>
                   </div>
-                )}
-                {plan.name === "Plus" && (
-                  <div className="absolute top-4 right-4 bg-blue-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                    Available on a 1- or 3-year term
-                  </div>
-                )}
-
-                <div>
-                  <h3 className="text-2xl font-bold mb-5">{plan.name}</h3>
-                  <p className="text-4xl font-extrabold mb-4">{plan.price}</p>
-                  <p className="text-sm text-gray-500 mb-6">{plan.subText}</p>
-                  <ul className="space-y-3 text-gray-700 text-base">
-                    {plan.description.map((item, i) => (
-                      <li key={i}>• {item}</li>
-                    ))}
-                  </ul>
+                  <button className="btn btn-dark mt-4">{plan.buttonText}</button>
                 </div>
-                <button className="mt-8 bg-black text-white font-bold px-4 py-3 rounded-lg hover:bg-gray-800 transition">
-                  {plan.buttonText}
-                </button>
               </div>
-            ))}
-          </div>
-
+            </div>
+          ))}
         </div>
       </section>
 
-     {/* --- FAQ SECTION --- */}
-<section className="bg-white py-16 px-4 sm:px-6">
-  <div className="max-w-5xl mx-auto">
-    <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-12">
-      Frequently Asked Questions
-    </h2>
-
-    <div className="space-y-6">
-      {faqs.map((faq, index) => (
-        <div key={index} className="border-b pb-4">
-          <button
-            onClick={() => toggleFAQ(index)}
-            className="w-full flex justify-between items-center text-left"
-          >
-            <span className="text-lg sm:text-xl font-semibold text-gray-900">
-              {faq.question}
-            </span>
-            <span className="text-2xl text-gray-400">
-              {openFAQ === index ? "−" : "+"}
-            </span>
-          </button>
-
-          {/* Animate answer */}
-          <AnimatePresence initial={false}>
-            {openFAQ === index && (
-              <motion.div
-                key="content"
-                initial="collapsed"
-                animate="open"
-                exit="collapsed"
-                variants={{
-                  open: { opacity: 1, height: "auto" },
-                  collapsed: { opacity: 0, height: 0 },
-                }}
-                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-
-                className="overflow-hidden"
-              >
-                <p className="mt-4 text-gray-600 text-sm sm:text-base">
-                  {faq.answer}
-                </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
+      {/* Features */}
+      <section className="bg-white py-5">
+        <div className="container text-center">
+          <h2 className="fw-bold mb-5">What every plan gets you</h2>
+          <div className="row justify-content-center">
+            {features.map((feature, index) => (
+              <div key={index} className="col-6 col-sm-6 col-md-4 col-lg-2 mb-4">
+                <div className="bg-light p-4 rounded shadow-sm h-100">
+                  <div className="fs-3 mb-3">{feature.icon}</div>
+                  <h6 className="fw-semibold">{feature.title}</h6>
+                  <p className="small text-muted">{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
+      {/* FAQs */}
+      <section className="bg-white py-5">
+        <div className="container">
+          <h2 className="text-center fw-bold mb-5">Frequently Asked Questions</h2>
+          <div className="accordion" id="faqAccordion">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="mb-3 border-bottom pb-3"
+                id={`faq-item-${index}`}
+              >
+                <button
+                  className="btn w-100 text-start d-flex justify-content-between align-items-center"
+                  onClick={() => {
+                    toggleFAQ(index);
+                    setTimeout(() => {
+                      const el = document.getElementById(`faq-item-${index}`);
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }
+                    }, 150);
+                  }}
+                >
+                  <span className="fw-semibold">{faq.question}</span>
+                  <span className="fs-5 text-muted">
+                    {openFAQ === index ? "▴" : "▾"}
+                  </span>
+                </button>
 
-      {/* --- FINAL CALL TO ACTION --- */}
+                <AnimatePresence initial={false}>
+                  {openFAQ === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4 }}
+                      className="overflow-hidden mt-2"
+                    >
+                      <p className="text-muted small">{faq.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
       <motion.section
-  className="bg-gradient-to-b from-white via-white to-gray-200 py-16 px-6 mt-10 text-center text-gray-800"
-  initial={{ opacity: 0, y: 50 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, amount: 0.3 }}
-  transition={{ duration: 0.6, ease: "easeOut" }}
->
-  <h2 className="text-4xl font-bold mb-4 italic">
-    Ready to unlock your AI-powered learning journey?
-  </h2>
-  <p className="text-lg mb-8 italic">
-    Join thousands of learners mastering their skills with Mentora.
-  </p>
+        className="bg-white py-5 text-center px-3"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="fw-bold display-6 mb-3 fst-italic">
+          Ready to unlock your AI-powered learning journey?
+        </h2>
+        <p className="lead mb-4 fst-italic">
+          Join thousands of learners mastering their skills with Mentora.
+        </p>
+        <button className="btn btn-outline-dark px-5 py-3 fw-bold">
+          Get Started for Free
+        </button>
+      </motion.section>
 
-  <button className="bg-white text-black font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition">
-    Get Started for Free
-  </button>
-</motion.section>
-      {/* --- FOOTER --- */}
-      <footer className="bg-gradient-to-b from-white via-white to-blue-100 text-center text-gray-500 py-6 text-xs sm:text-sm mt-8">
+      {/* Footer */}
+      <footer className="bg-light text-center text-muted py-3 small mt-5">
         © {new Date().getFullYear()} Mentora. All rights reserved.
       </footer>
-
     </div>
   );
 };

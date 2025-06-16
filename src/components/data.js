@@ -15,7 +15,7 @@ export const pricingData = {
     },
     {
       name: "Pro",
-      price: "$54 USD/month",
+      price: "$24 USD/month",
       subText: "billed annually",
       description: [
         "Access to all AI-curated courses",
@@ -30,7 +30,7 @@ export const pricingData = {
     },
     {
       name: "Master",
-      price: "$199 USD/month",
+      price: "$49 USD/month",
       subText: "billed annually",
       description: [
         "All Pro features",
@@ -44,7 +44,7 @@ export const pricingData = {
     },
     {
       name: "Enterprise",
-      price: "$999 USD/month",
+      price: "$99 USD/month",
       subText: "custom billing options available",
       description: [
         "Unlimited AI Chatbot access for teams",
