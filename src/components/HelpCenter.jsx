@@ -34,93 +34,107 @@ const FAQ = () => {
 
   return (
     <>
-      <section className="bg-light py-5 px-3">
-        <div className="container">
-          {/* Header */}
-          <div className="text-center mb-5">
-            <h1 className="display-5 fw-bold text-dark mb-3">Help Center</h1>
-            <p className="text-muted fs-5">
-              Need assistance? Our team is here to support you every step of the way.
-            </p>
+    <section className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+            Help Center
+          </h1>
+          <p className="text-gray-600 text-base sm:text-lg">
+            Need assistance? Our team is here to support you every step of the way.
+          </p>
+        </div>
+
+        {/* Contact Grid */}
+        <div className="grid gap-6 sm:grid-cols-2 mb-20">
+          <div className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition">
+            <h2 className="text-xl font-semibold text-gray-900 mb-2">Contact Us</h2>
+            <p className="text-gray-600 mb-4">Get in touch with our support team:</p>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li>
+                <strong>Email:</strong>{" "}
+                <a href="mailto:support@mentora.com" className="text-blue-600 hover:underline">
+                  support@mentora.com
+                </a>
+              </li>
+              <li>
+                <strong>Phone:</strong> +234 903 123-4567
+              </li>
+              <li>
+                <strong>Hours:</strong> Mon–Fri, 9AM–6PM (WAT)
+              </li>
+            </ul>
           </div>
 
-          {/* Contact Grid */}
-          <div className="row g-4 mb-5">
-            <div className="col-md-6">
-              <div className="bg-white p-4 rounded-4 shadow-sm h-100">
-                <h2 className="h5 fw-semibold text-dark mb-2">Contact Us</h2>
-                <p className="text-muted mb-3">Get in touch with our support team:</p>
-                <ul className="list-unstyled small text-muted">
-                  <li>
-                    <strong>Email:</strong>{" "}
-                    <a href="mailto:support@mentora.com" className="text-decoration-none text-primary">
-                      support@mentora.com
-                    </a>
-                  </li>
-                  <li>
-                    <strong>Phone:</strong> +234 903 123-4567
-                  </li>
-                  <li>
-                    <strong>Hours:</strong> Mon–Fri, 9AM–6PM (WAT)
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="col-md-6">
-              <div className="bg-white p-4 rounded-4 shadow-sm h-100">
-                <h2 className="h5 fw-semibold text-dark mb-2">Live Chat</h2>
-                <p className="text-muted mb-3">Talk to our support team in real time.</p>
-                <button className="btn btn-dark">Start Live Chat</button>
-              </div>
-            </div>
-          </div>
-
-          {/* FAQ Section */}
-          <div>
-            <h2 className="text-center fw-bold h4 mb-4">Frequently Asked Questions</h2>
-            <div className="accordion" id="faqAccordion">
-              {faqs.map((faq, index) => (
-                <div key={index} className="border rounded-3 p-3 mb-3">
-                  <button
-                    onClick={() => toggleFAQ(index)}
-                    className="btn w-100 d-flex justify-content-between align-items-center text-start"
-                    aria-expanded={openIndex === index}
-                    aria-controls={`faq-answer-${index}`}
-                  >
-                    <span className="fw-medium">{faq.question}</span>
-                    <span className="text-muted">
-                      {openIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                    </span>
-                  </button>
-
-                  <AnimatePresence initial={false}>
-                    {openIndex === index && (
-                      <motion.div
-                        id={`faq-answer-${index}`}
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden mt-2 text-muted"
-                      >
-                        {faq.answer}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-            </div>
+          <div className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition">
+            <h2 className="text-xl font-semibold text-gray-900 mb-2">Live Chat</h2>
+            <p className="text-gray-600 mb-4">Talk to our support team in real time.</p>
+            <button className="bg-gray-800 hover:bg-gray-500 text-white font-medium py-2 px-4 rounded transition">
+              Start Live Chat
+            </button>
           </div>
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="bg-light text-center text-muted py-3 small mt-4">
+        {/* Download Section */}
+       
+
+        {/* FAQ Section */}
+        <div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-10">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="border border-gray-200 rounded-xl p-5 transition-shadow hover:shadow-sm"
+              >
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full flex justify-between items-center text-left"
+                  aria-expanded={openIndex === index}
+                  aria-controls={`faq-answer-${index}`}
+                >
+                  <span className="text-base sm:text-lg font-medium text-gray-900">
+                    {faq.question}
+                  </span>
+                  <span className="text-gray-500">
+                    {openIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {openIndex === index && (
+                    <motion.div
+                      id={`faq-answer-${index}`}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden mt-4 text-gray-600 text-sm sm:text-base"
+                    >
+                      {faq.answer}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+     {/* Footer */}
+     <footer className="bg-gradient-to-b from-white via-gray-50 to-gray-200 text-center text-gray-500 py-6 text-xs sm:text-sm mt-8">
         © {new Date().getFullYear()} Mentora. All rights reserved.
       </footer>
-    </>
+
+      </>
   );
 };
+
+
 
 export default FAQ;
