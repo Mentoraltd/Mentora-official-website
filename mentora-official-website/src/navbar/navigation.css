@@ -17,6 +17,15 @@
     border-bottom: 2px solid #1c1c1c; /* Adjust color and thickness as needed */
 }
 
+.navContainer a{
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    color: initial;
+    display: flex;
+    align-items: center;
+}
+
 .companyLogo{
     display: flex;
     align-items: center;
@@ -224,6 +233,10 @@
         color: var(--light);
         font-weight: 450;
         padding-left: 60px;
+    }
+
+    .mobileNav ul a {
+        width: 100%;
     }
 
    .navContainer{

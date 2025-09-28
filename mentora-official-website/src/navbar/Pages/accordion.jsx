@@ -21,9 +21,9 @@ const Accordion = ({ items }) => {
           open={openIndex === index}
           onToggle={(event) => handleToggle(index, event)}
         >
-          <summary style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <summary style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
           {item.title}
-            {openIndex !== index && <MdAdd style={{color: "#1e2ede", fontSize: "24px"}} />}
+            {openIndex !== index && <MdAdd className='addIcon' />}
           </summary>
           <p>{item.content}</p>
         </details>

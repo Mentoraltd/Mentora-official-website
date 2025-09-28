@@ -11,11 +11,7 @@ const Footer = () => {
                 <span>Mentora</span>
               </div>
               <div className="text">
-              Unique Value Proposition
-                Mentora is unique because it combines academic success with well-
-                being. Unlike competitors, it’s not just a study tool but a holistic
-                platform that helps students manage stress, plan smarter, and stay
-                motivated through gamification.</div>
+              Designed to meet the unique needs of Nigerian students — with intuitive design, and contextual examples relevant to national curricula.</div>
               <div className="inc">2025 Mentora. All rights reserved</div>
             </div>
             <div className="links">
@@ -33,7 +29,7 @@ const Footer = () => {
               <div className="connect">
                 <header>Connect to us</header>
                 <div className="socials">
-                  <span>Twitter</span><span>Instagram</span>
+                  <a href="https://www.instagram.com/study_with_mentora/"><span>Instagram</span></a><a href="https://x.com/studywithmentora"><span>X</span></a>
                 </div>
               </div>
             </div>

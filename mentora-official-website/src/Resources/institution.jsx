@@ -2,164 +2,103 @@ import React, {useState} from "react";
 import './students.css';
 import './institution.css';
 import { IoIosArrowDown } from "react-icons/io";
-import ArticleImg1 from "../assets/133814580988668850.jpg";
+import ArticleImg1 from "../assets/photo_2025-08-31_20-52-26-removebg-preview.png";
 import Icon1 from "./../assets/icon (1).svg";
 import Icon2 from "./../assets/icon (2).svg";
 import Icon3 from "./../assets/icon.svg";
 import Icon4 from "./../assets/Group_48096212.svg";
-import FeatureShow from "../assets/mentora hard problem.png";
+import FeatureShow from "../assets/28.05.2025_09.02.23_REC.png";
 import Navigation from "../navbar/navigation";
+import CustomCursor from "../navbar/Pages/customcursor";
 import { AccordionInstitution } from "../navbar/Pages/accordion";
 import Footer from "../../footer";
+import BackToTopBtn from "../component";
 
 
 
 const Institution = () => {
-
-      const [isPopupVisible, setIsPopupVisible] = useState(false);
-    const [selectedToolIndex, setSelectedToolIndex] = useState(0); // default to Tool 1
-    const [animate, setAnimate] = useState(false);
-
-
-    const handleToolSelect = (index) => {
-        setAnimate(true); // trigger slide out
-        setTimeout(() => {
-            setSelectedToolIndex(index);
-            setAnimate(false); // reset slide
-            setIsPopupVisible(false); // close dropdown
-        }, 300); // delay must match CSS transition
-    };
-
-
-      const togglePopup = () => {
-        setIsPopupVisible(!isPopupVisible);
-      };
-
-      const toolsData = [
-        {
-          name: "AI Tutor",
-          title: "AI Tutor",
-          heading: "Prove where your words came from",
-          paragraph: "Automatically label your text sources as typed by you, copied from a source, or created with AI.",
-        },
-        {
-          name: "Smart Assistant",
-          title: "Smart Assistant",
-          heading: "Boost your writing speed",
-          paragraph: "With smart suggestions and context awareness, write better and faster across platforms.",
-        },
-        {
-          name: "Plagiarism Checker",
-          title: "Plagiarism Checker",
-          heading: "Detect originality instantly",
-          paragraph: "Scan for duplicate content and ensure authenticity in your written documents.",
-        },
-        {
-          name: "Grammar Coach",
-          title: "Grammar Coach",
-          heading: "Improve sentence clarity",
-          paragraph: "Real-time grammar and style suggestions tailored for professional writing.",
-        },
-      ];
       
 
       const solutionFeatures = {
         tool1: {
             img: Icon1,
-            headerTxt: "Prove where your words came from",
-            text : "Automatically label your text sources as typed by you, copied from a source, or created with AI.",
+            headerTxt: "Digital Transformation Support:",
+            text : "Schools and universities can leverage Mentora as a blended learning tool, reducing strain on faculty while boosting accessibility for students.",
         },
 
         tool2: {
             img: Icon2,
-            headerTxt: "Prove where your words came from",
-            text : "Automatically label your text sources as typed by you, copied from a source, or created with AI.",
+            headerTxt: "Student–Institution Communication",
+            text : "Students gain direct access to AI tutors trained on their school’s curriculum, making learning more personalized and relevant.",
         },
         tool3: {
             img: Icon3,
-            headerTxt: "Prove where your words came from",
-            text : "Automatically label your text sources as typed by you, copied from a source, or created with AI.",
+            headerTxt: "Teacher–Student Communication",
+            text : "Faculty can integrate their notes, explanations, and examples into Mentora, allowing students to receive AI-driven guidance that mirrors classroom instruction.",
         },
-        tool4: {
-            img: Icon4,
-            headerTxt: "Prove where your words came from",
-            text : "Automatically label your text sources as typed by you, copied from a source, or created with AI.",
-        },
-      }
 
-      const solutionFeaturesRight = {
-        tool1: {
+                tool4: {
             img: Icon1,
-            headerTxt: "Prove where your words came from",
-            text : "Automatically label your text sources as typed by you, copied from a source, or created with AI.",
+            headerTxt: "Institution–Mentora Communication",
+            text : "Institutions receive actionable insights on student learning patterns, strengths, and areas for improvement, enabling data-driven decisions.",
         },
 
-        tool2: {
+        tool5: {
             img: Icon2,
-            headerTxt: "Prove where your words came from",
-            text : "Automatically label your text sources as typed by you, copied from a source, or created with AI.",
-        },
-        tool3: {
-            img: Icon3,
-            headerTxt: "Prove where your words came from",
-            text : "Automatically label your text sources as typed by you, copied from a source, or created with AI.",
-        },
-        tool4: {
-            img: Icon4,
-            headerTxt: "Prove where your words came from",
-            text : "Automatically label your text sources as typed by you, copied from a source, or created with AI.",
-        },
+            headerTxt: "Cross-Campus Collaboration",
+            text : "Universities and schools can partner with Mentora to foster research, digital innovation, and AI-powered blended learning models.",
+        }
       }
 
     const mvp = {
         mvp1 : {
             icon : Icon1,
-            text : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo corporis at autem voluptate id perspiciatis laborum, eum nisi voluptates provident.",
+            text : "Curriculum Integration: Adapt AI tutors to deliver content based on the institution’s syllabus.",
         },
 
         mvp2 : {
             icon : Icon2,
-            text : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi possimus nisi aperiam sapiente nemo saepe nihil id voluptates tempore deleniti.",
+            text : "Assessment Alignment: Generate practice questions and mock exams in the same format students encounter in their school or university assessments.",
         },
 
         mvp3 : {
             icon : Icon3,
-            text : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nemo fugiat, ex tempora ipsam officiis repellat blanditiis ullam natus omnis?",
+            text : "Research and Innovation Collaboration: Universities can collaborate with Mentora to explore how AI-driven education impacts pedagogy, inclusivity, and academic outcomes.",
         },
 
         mvp4 : {
             icon: Icon4,
-            text : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus consectetur nesciunt deleniti accusamus optio laborum alias vero unde fuga ut.",
+            text : "Learning Analytics for Educators: Institutions gain access to insights on student engagement, performance gaps, and progression patterns to inform teaching strategies.",
         }
     }; 
 
     const accordionItems = [
-        { title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis facilis error deserunt, illum tenetur quas!' },
-        { title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, ad. Similique saepe laborum id illum odit fuga? Aliquid minus, praesentium, deleniti impedit alias consequatur in nihil magnam dolor qui sed.' },
-        { title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis facilis error deserunt, illum tenetur quas!' },
-        { title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis facilis error deserunt, illum tenetur quas!' },
-        { title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis facilis error deserunt, illum tenetur quas!' },
-        { title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis facilis error deserunt, illum tenetur quas!' },
-        { title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis facilis error deserunt, illum tenetur quas!' },
+        { title: 'What is the Mentora Institutional Partnership Program?', content: 'The Mentora Institutional Partnership Program allows schools, colleges, and universities to collaborate with Mentora so our AI tutor can be trained to align with their syllabus, teaching style, and academic objectives. This ensures students receive personalized learning support that matches the institution’s curriculum.' },
+        { title: 'How does partnering with Mentora benefit our institution?', content: 'Provide data-driven insights into student progress, Improve communication across departments and with students, Reduce teacher workload through automated support, Enhance student success rates by improving exam readiness' },
+        { title: 'Can Mentora adapt to our unique teaching style and curriculum?', content: 'Yes. We work closely with institutions to upload, structure, and integrate their syllabus into Mentora. The AI tutor then adapts its explanations, examples, and practice questions to reflect the way your institution teaches and assesses students.' },
+        { title: 'Is student data secure when partnering with Mentora?', content: 'Absolutely. Data security and privacy are top priorities. Institutions maintain control over what data is shared, and all information is stored securely with full compliance to data protection standards.' },
+        { title: 'What makes Mentora a game changer for institutions?', content: 'Mentora’s intelligent features not only support students but also strengthen institutional communication and teaching efficiency. With syllabus alignment, AI-driven insights, and customizable learning paths, Mentora enables schools and universities to modernize their teaching while improving student engagement and results.' },
+        { title: 'What kind of training or onboarding is required for staff?', content: 'We provide a seamless onboarding process. Institutions receive training sessions for faculty and student orientation modules to ensure everyone understands how to use the platform effectively.' },
+        { title: 'Can Mentora help reduce exam anxiety and improve results?', content: 'Yes. By simulating real exam conditions, tracking performance, and providing personalized study plans, Mentora helps students feel more confident and prepared — ultimately improving institutional performance metrics.' },
       ];
 
     return (
         <>
             <Navigation/>
+            <CustomCursor/>
 
             <section className="studentsHero">
                 <section className="studentCont">
                     <div className="firstContainer">
-                        <h2>Boost Your Grades With Better Learning Practice and Prep Aid</h2>
-                        <span>Join the millions of students worldwide to improve your learning practices and achieve your goals. </span>
+                        <h2>Institution Collaboration</h2>
+                        <span>Mentora allows schools, colleges, and universities to collaborate with us to unlock the full potential of AI-powered learning. Institutions can directly reach out to us to co-create a customized AI tutor ecosystem tailored to their unique curriculum, teaching style, and academic goals. </span>
                         <div className="DownloadBtn">
-                            <button type="submit" id="Dapk">Contact Education Sales</button>
+                            <button type="submit" id="Dapk"><a href="mailto:mentoraltd@gmail.com">Contact Sales </a> </button>
                         </div>
                     </div>
-                    <div className="secondContainer">
-                        <img src={ArticleImg1} alt="" />
-                    </div>
                 </section>
+
+                <p className="institutionDesc">By partnering with Mentora, institutions gain the ability to train our AI models to understand and align with their syllabus, grading patterns, and pedagogical approaches. This ensures that students receive guidance that mirrors the exact way their teachers explain concepts, making AI a natural extension of the classroom rather than a disconnected tool.</p>
 
                 <section className="I-mvpOutline">
                     {Object.keys(mvp).map((key) => (
@@ -172,44 +111,6 @@ const Institution = () => {
                 
             </section>
 
-            <section className="AiSpec">
-                <div className="specHeader">
-                    <h2>Get win streak of exam success brewed by improved learning progression</h2>
-                    <p>Mentora features helps you prepare for different form of examination.  Academic Progress has never been easier to achieve.</p>
-                </div>
-
-                <div className="specBody">
-                    <div className="specBodyTop">
-                        <h4>{toolsData[selectedToolIndex].title}</h4>
-                        <div className="specDrop">
-                            <span onClick={togglePopup}>Next <IoIosArrowDown/></span>
-
-                            {isPopupVisible && (
-                                <div className="specDropDown">
-                                {toolsData.map((tool, index) => (
-                                <div key={index} onClick={() => handleToolSelect(index)}>
-                                    {tool.name}
-                                </div>
-                                ))}
-                            </div>
-                            )}
-                        </div>
-                        
-                    </div>
-
-                    <div className={`specBodyCont ${animate ? 'slide-out' : 'slide-in'}`}>
-                        <div className="bodyContLeft">
-                            <h4>{toolsData[selectedToolIndex].heading}</h4>
-                            <p>{toolsData[selectedToolIndex].paragraph}</p>
-                            <span>Learn more</span>
-                        </div>
-                        <div className="bodyContRight">
-                            <img src={FeatureShow} alt="" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section className="solutionOulines">
                 <div className="SO-header">
                     <h2>Game Changer for Institution </h2>
@@ -220,18 +121,8 @@ const Institution = () => {
                     <div className="SO-bodyLeftContainer">
                         {Object.keys(solutionFeatures).map((key) => (
                             <div className="SO-ContainerBox" key={key}>
-                                <img src={solutionFeatures[key].img} alt="" />
                                 <h4>{solutionFeatures[key].headerTxt}</h4>
                                 <p>{solutionFeatures[key].text}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="SO-bodyRightContainer">
-                    {Object.keys(solutionFeaturesRight).map((key) => (
-                            <div className="SO-ContainerBox" key={key}>
-                                <img src={solutionFeaturesRight[key].img} alt="" />
-                                <h4>{solutionFeaturesRight[key].headerTxt}</h4>
-                                <p>{solutionFeaturesRight[key].text}</p>
                             </div>
                         ))}
                     </div>
@@ -246,6 +137,8 @@ const Institution = () => {
                 <AccordionInstitution items={accordionItems} />
                 
             </section>
+
+            <BackToTopBtn/>
 
             <Footer/>
         </>

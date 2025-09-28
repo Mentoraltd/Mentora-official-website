@@ -7,12 +7,58 @@
     row-gap: 50px;
 }
 
+
+.studentsHero{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+    background: #f4f7fc;
+    background: linear-gradient(135deg, #f8fbfd, #eaf2f8, #dce9f3);
+    padding: 120px 060px;
+}
+
+.studentCont{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.firstContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: #000;
+}
+
+.institutionDesc{
+    width: 60%;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 500;
+    padding: 20px;
+    line-height: 30px;
+    background: white;
+    color: black;
+    border-radius: 15px;
+    box-shadow:  0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
 .mvpContainer{
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: center;
     color: #fff;
+    margin-top: 50px;
 }
 
 .mvpContainer .icon{
@@ -21,11 +67,19 @@
 }
 
 .mvpContainer .mvpTxt{
-    color: #fff;
+    color: #000;
     font-family: "Mona Sans", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 28px;
+}
+
+.DownloadBtn button a{
+        font-size: 14px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Solution Outlines */
@@ -69,19 +123,18 @@
     gap: 30px;
 }
 
-.SO-bodyLeftContainer, .SO-bodyRightContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.SO-bodyLeftContainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    width: 45%;
 }
 
 .SO-ContainerBox{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
+    width: 100%;
 }
 
 .SO-ContainerBox img{
@@ -140,7 +193,8 @@
     flex-direction: column;
     gap: 20px;
     outline: none;
-    border: 1px solid #010904;
+    border: 1px solid #0109042f;
+    border-radius: 15px;
     padding: 20px;
 }
 
@@ -157,6 +211,7 @@
     font-weight: 400;
     font-family: "Mona Sans", sans-serif;
     letter-spacing: 1.5px;
+    color: #353535;
 }
 
 
@@ -167,11 +222,56 @@
     }
 }
 
+
 @media screen and (max-width: 860px) {
     .I-mvpOutline {
         display: flex;
         flex-direction: column;
         margin-top: 60px;
+        gap: 40px;
+    }
+
+    .institutionDesc {
+        width: 80%;
+    }
+
+    .mvpContainer .icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .mvpContainer .mvpTxt {
+        font-size: 15px;
+        color: #000000;
+    }
+
+    .firstContainer h2 {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    
+    .specHeader p {
+        font-size: 14px;
+    }
+
+    .AiSpec {
+        margin-top: 60px;
+        margin-bottom: 60px;   
+    }
+
+    .specBody {
+        gap: 30px;
+    }
+
+    .specBodyTop h4 {
+        font-size: 18px;
+    }
+
+    .bodyContLeft h4 {
+        font-size: 25px;
     }
 
     .specHeader h2 {
@@ -180,30 +280,129 @@
 
     .solutionOulines {
         width: 90%;
+        margin-top: 30px;
     }
 
     .SO-body {
         gap: 10px;
         justify-content: space-between;
+        width: 80%;
+        align-self: center;
     }
 
-    .SO-bodyLeftContainer, .SO-bodyRightContainer {
-        width: 47%;
+    
+    .SO-header h2 {
+        font-size: 30px;
+        width: 90%;
+        text-align: center;
+    }
+
+    .SO-header p {
+        width: 70%;
+        font-size: 14px;
+        text-align: center;
+
+    }
+
+
+    .SO-bodyLeftContainer h4 {
+        font-size: 16px;
+    }
+
+    .SO-bodyLeftContainer p {
+        font-size: 14px;
     }
 
     .SO-ContainerBox {
         gap: 10px;
     }
 
+    .SO-ContainerBox img {
+        width: 70px;
+        height: 70px;
+    }
+
     .SO-faq {
         width: 80%;
-        gap: 30px;
+        gap: 60px;
+        margin-top: 30px;
     }
 
     .SO-faqHeader h2 {
         text-align: center;
+        font-size: 24px;
     }
+
+    .accordionDetails {
+        border: none;
+        border-bottom: 1px dotted #010904;
+        padding: 0;
+        gap: 10px;
+        padding: 10px 5px;
+    }
+
+    .accordionSummary {
+        font-size: 15px;
+    }
+
+    .accordionDetails p {
+        font-size: 13px;
+    }
+
 }
 
-@media screen and (max-width: 1785px) {
+@media screen and (max-width: 580px) {
+    
+    .firstContainer h2 {
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 30px;
+        letter-spacing: initial;
+    }
+
+    .DownloadBtn {
+        margin-top: 10px;
+    }
+
+    .institutionDesc {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .firstContainer span {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .firstContainer {
+        gap: 10px;
+    }
+
+    .I-mvpOutline {
+        width: 100%;
+    }
+
+    .mvpContainer .mvpTxt {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .mvpContainer {
+        margin-top: 10px;
+    }
+
+    .SO-body {
+        width: 100%;
+    }
+
+    .SO-faqHeader h2 {
+    font-size: 20px;
+    }
+
+    .SO-faq {
+        gap: 30px;
+        width: 90%;
+    }
+
+    
 }

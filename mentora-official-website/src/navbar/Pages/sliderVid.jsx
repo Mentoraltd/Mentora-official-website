@@ -167,7 +167,7 @@ const ImageSlider = ({ images }) => {
             </div>
           </div>
         </div>
-        <span>Transform your study experience, making simplified educational experience</span>
+        <span>Break Down Complex Topics with AI That Thinks Like You Do.</span>
       </div>
     </>
   );

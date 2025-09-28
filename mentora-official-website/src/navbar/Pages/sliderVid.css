@@ -10,7 +10,7 @@
   }
   
   .image-container {
-    width: 60%; /* Adjust as needed */
+    width: 80%; /* Adjust as needed */
     height: 50vh; /* Adjust as needed */
     overflow: hidden; /* Clip the shrinking image */
     position: relative; /* For absolute positioning of transition effects if needed */
@@ -19,7 +19,7 @@
   .image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:fill;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
   }
 
@@ -133,7 +133,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
-    width: 80%;
+    width: 100%;
     position: absolute;
     top: 50%;
   }
@@ -178,10 +178,40 @@
     transition: width 0.1s linear;
   }
   
+
+    @media screen and (min-width: 1024px) {
+      .image-container {
+        height: 40vh; /* Adjust as needed */
+      }
+  }
+
   
-  @media screen and (min-width: 769px) {
-    .mobile-nav-buttons {
-      display: none;
+  @media screen and (max-width: 769px) {
+
+    .image-container {
+      width: 80%;
+      height: 30vh;
     }
   }
-  
+
+    
+  @media screen and (max-width: 560px) {
+    .image-container {
+      display: none;
+      width: 90%;
+    }
+
+  .mobile-nav-buttons {
+    top: 100%;
+    display: none;
+  }
+  }
+
+
+  @media screen and (max-width: 378px) {
+    .image-container {
+      width: 100%;
+      height: 30vh;
+    }
+  }
+   

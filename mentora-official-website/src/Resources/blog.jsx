@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from 'react'
 import './blog.css'
 import Navigation from "../navbar/navigation";
 import Footer from "../../footer";
@@ -7,86 +7,114 @@ import ArticleImg1 from "../assets/133814580988668850.jpg";
 import { IoIosArrowDown } from "react-icons/io";
 import UpdateLog from "./updatesLog";
 import { NewsAndInsight } from "./updatesLog";
+import CustomCursor from "./../navbar/Pages/customcursor";
+import { supabase } from "../lib/superbase";
 
 const Blogs = () => {
-    
-    const TopArticle = {
-        top1 : {
-            label: "Pomodoro-Timer",
-            title : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, dolorum.",
-            body : "Random Text Generator is a web application which provides true random text which you can use in your documents or web designs. How does it work? First we took many books available on project Gutenberg and stored their contents in a database.",
-            articleImg : ArticleImg1,
-            authorImg : ArticleImg1,
-            authorName : "Sophia Martin",
-            publishDate: "April 27, 2025"
-        },
+    const [blogs, setBlogs] = useState([]);
+    const [selectedBlog, setSelectedBlog] = useState(null);
 
-        top2 : {
-            label: "AI-TUTOR",
-            title : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, dolorum.",
-            body : "The algorithm takes care to create text that looks similar to an ordinary book but without any real meaning. The reason we want our text to be meaningless is that we want the person.",
-            articleImg : ArticleImg1,
-            authorImg : ArticleImg1,
-            authorName : "Ethan Taylor",
-            publishDate: "April 27, 2025"
-        },
 
-        top3 : {
-            label: "FLASHCARDS",
-            title : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, dolorum.",
-            body : "Lorem ipsum is the most common form of Greeking. However more and more people are sick and tired of using the same sample text over and over again. Also lorem ipsum is in latin.",
-            articleImg : ArticleImg1,
-            authorImg : ArticleImg1,
-            authorName : "Isabella Johnson",
-            publishDate: "April 27, 2025"
+  useEffect(() => {
+    const fetchBlogs = async () => {
+        let { data, error } = await supabase
+            .from("blog")
+            .select("*")
+            .eq("status", "Published")
+            .order("datepublished", { ascending: false });
+
+        if (error) {
+            console.error("Supabase error:", error);
+        } else {
+            console.log("Fetched blogs:", data);
+            setBlogs(data || []);
         }
+        };
 
+        fetchBlogs();
+    }, []);
+    
+
+    if (!blogs || blogs.length === 0) {
+        return <p>No blogs yet.</p>;
     }
+
+    const [firstBlog, ...otherBlogs] = blogs;
 
 
   return (
     <>
       <Navigation />
+      <CustomCursor/>
 
       <section className="blogHero">
         <div className="topBlogArticle">
-            <div className="BheroLeft">
+            {/* Left side - first blog */}
+            {firstBlog && (
+                <div className="BheroLeft">
                 <div className="BheroLeftContainer">
-                    <div className="articleImg">
-                        <img src={ArticleImg1} alt="" />
-                    </div>
-                    
-                    <div className="BheroTextContainer">
-                        <span className="label">Pomodoro-Timer</span>
-                        <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, dolorum.</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime dignissimos illum nihil eaque. Magnam exercitationem odio tenetur accusantium nobis voluptas aliquam, a officia necessitatibus. At quos eligendi praesentium. Eum unde odio ipsa eaque minus illum at veritatis animi molestiae ab.</p>
 
+                    <div className="articleImg">
+                    <img
+                        src={firstBlog.coverimage || "/placeholder.jpg"}
+                        alt={firstBlog.title}
+                    />
+                    </div>
+                    <div className="BheroTextContainer">
+                    <span className="label">{firstBlog.tag} <span className='readArticle' onClick={() => setSelectedBlog(firstBlog)}
+                    style={{ cursor: 'pointer' }}>Read Article</span></span>
+
+                    <h4>{firstBlog.title}</h4>
+                    <p>{firstBlog.summary}</p>
                     </div>
                     <div className="BheroAuthor">
-                        <span className="authorImg">
-                            <img src={ArticleImg1} alt="" />
-                        </span>
-                        <span className="authorName">Tyler Mcalter</span>
-                        <span className="publishDate">| April 27, 2025</span>
+                    <span className="authorImg">
+                        <img
+                        src={firstBlog.coverimage || "/placeholder.jpg"}
+                        alt={firstBlog.author}
+                        />
+                    </span>
+                    <span className="authorName">{firstBlog.author}</span>
+                    <span className="publishDate">
+                        |{" "}
+                        {firstBlog.datepublished
+                        ? new Date(firstBlog.datepublished).toLocaleDateString()
+                        : ""}
+                    </span>
                     </div>
                 </div>
-            </div>
+                </div>
+            )}
+
+            {/* Right side - other blogs */}
             <div className="BheroRight">
-                {Object.keys(TopArticle).map((key) => (
-                    <div className="BheroRightContainer" key={key}>
-                        <div className="articleImg">
-                            <img src={TopArticle[key].articleImg} alt="" />
-                        </div>
-                        <div className="BheroRightTxt">
-                            <div className="label">{TopArticle[key].label}</div>
-                            <h6>{TopArticle[key].title}</h6>
-                            <p>{TopArticle[key].body}</p>
-                            <div className="BheroAuthor">
-                                <span className="authorName">{TopArticle[key].authorName}</span>
-                                <span className="publishDate">| {TopArticle[key].publishDate}</span>
-                            </div>
-                        </div>
-                    </div>))}
+                {otherBlogs.map((blog) => (
+                <div
+                    className="BheroRightContainer"  key={blog.id}>
+                    
+                    <div className="articleImg">
+                    <img
+                        src={blog.coverimage || "/placeholder.jpg"}
+                        alt={blog.title}
+                    />
+                    </div>
+                    <div className="BheroRightTxt">
+                    <div className="label">{blog.tag} <span className='readArticle' onClick={() => setSelectedBlog(blog)}
+                style={{ cursor: 'pointer' }}>Read Article</span></div>
+                    <h6>{blog.title}</h6>
+                    <p>{blog.summary}</p>
+                    <div className="BheroAuthor">
+                        <span className="authorName">{blog.author}</span>
+                        <span className="publishDate">
+                        |{" "}
+                        {blog.datepublished
+                            ? new Date(blog.datepublished).toLocaleDateString()
+                            : ""}
+                        </span>
+                    </div>
+                    </div>
+                </div>
+                ))}
             </div>
         </div>
 
@@ -110,75 +138,48 @@ const Blogs = () => {
                 </form>
             </div>
         </div>
-      </section>
 
-      <section className="latest-popular">
-            <div className="lpContainer">
-                <hr />
-                <div className="lpHeader">
-                    <h6>Latest</h6>
-                    <span>View All <IoIosArrowDown className="lpArrowRight"/></span>
+        {selectedBlog && (
+            <div className="modalOverlay" onClick={() => setSelectedBlog(null)}>
+                <div className="modalContent" onClick={(e) => e.stopPropagation()}>
+                <button className="closeBtn" onClick={() => setSelectedBlog(null)}>×</button>
+                
+                <div className="modalHeader">
+                    <h2>{selectedBlog.title}</h2>
+                    <span className="modalMeta">
+                    By {selectedBlog.author} |{" "}
+                    {selectedBlog.datepublished
+                        ? new Date(selectedBlog.datepublished).toLocaleDateString()
+                        : ""}
+                    </span>
                 </div>
 
-                <div className="lpBody">
-                    {Object.keys(TopArticle).map((key) => (
-                        <div className="BheroRightContainer" key={key}>
-                            <div className="articleImg">
-                                <img src={TopArticle[key].articleImg} alt="" />
-                            </div>
-                            <div className="BheroRightTxt">
-                                <div className="label">{TopArticle[key].label}</div>
-                                <h6>{TopArticle[key].title}</h6>
-                                <p>{TopArticle[key].body}</p>
-                                <div className="BheroAuthor">
-                                    <span className="authorName">{TopArticle[key].authorName}</span>
-                                    <span className="publishDate">| {TopArticle[key].publishDate}</span>
-                                </div>
-                            </div>
-                        </div>))}
+                <div className="modalBody">
+                    <div dangerouslySetInnerHTML={{ __html: selectedBlog.content }} />
+                </div>
                 </div>
             </div>
+            )}
 
-            <div className="lpContainer">
-                <hr />
-                <div className="lpHeader">
-                    <h6>Popular</h6>
-                    <button className="filter">Trending Now <IoIosArrowDown className="lpArrowRight"/></button>
-                </div>
+    </section>
 
-                <div className="lpBody">
-                    {Object.keys(TopArticle).map((key) => (
-                        <div className="BheroRightContainer" key={key}>
-                            <div className="articleImg">
-                                <img src={TopArticle[key].articleImg} alt="" />
-                            </div>
-                            <div className="BheroRightTxt">
-                                <div className="label">{TopArticle[key].label}</div>
-                                <h6>{TopArticle[key].title}</h6>
-                                <p>{TopArticle[key].body}</p>
-                                <div className="BheroAuthor">
-                                    <span className="authorName">{TopArticle[key].authorName}</span>
-                                    <span className="publishDate">| {TopArticle[key].publishDate}</span>
-                                </div>
-                            </div>
-                        </div>))}
-                </div>
-            </div>
-      </section>
-                        
-      <section className="bannerArticle">
-        <UpdateLog/>
-      </section>
+    {/* All blog and Article list with pagination */}
+    <NewsAndInsight/>
 
-      
-      <NewsAndInsight/>
 
-      <Footer/>
+    <section className="bannerArticle">
+        <UpdateLog/> 
+        
+    </section>
 
-      <BackToTopBtn/>
+    <Footer/>
+
+    <BackToTopBtn/>
 
     </>
   )
 };
 
 export default Blogs;
+
+

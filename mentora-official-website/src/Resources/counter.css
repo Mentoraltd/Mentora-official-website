@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bannerSubCounter{
+    width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background-color: #4ea1f7; /* Same as your image */
+  min-height: 200px;
+  border-radius: 20px;
+  color: white;
+    margin-top: 30px;
+}
+
+.subCounterCont{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+}
+
+.SubTxts {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.SubTxts a{
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #4ea1f7;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.SubTxts h2{
+    font-size: 24px;
+    font-family: "Mona sans", sans-serif;
+}
+
+.SubTxts p{
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+}
+
+.subSubmit{
+    width: 50%;
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight: 600;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #4ea1f7;
+    font-size: 16px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: transparent; /* Same as your image */
+  min-height: 200px;
+  border-radius: 10px;
+  color: white;
+  gap: 20px;
+}
+
+.counter-digits {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.digit-box {
+  width: 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.counter-label {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+
+
+@media screen and (max-width: 780px) {
+   .bannerSubCounter {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 0;
+  }
+
+  .subSubmit {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 560px) {
+  .subSubmit {
+        width: 100%;
+    }
+
+    .subCounterCont {
+        flex-direction: column;
+    }
+
+    .SubTxts {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .counter-container {
+        padding: 0;
+        gap: 21px;
+    }
+
+    .bannerSubCounter {
+        padding: 10px;
+        padding-top: 30px;
+    }
+}

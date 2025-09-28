@@ -2,13 +2,15 @@ import React from "react";
 import "./learn-demo.css";
 import { IoIosArrowDown } from "react-icons/io";
 import ArticleImg1 from "../assets/133814580988668850.jpg";
-import BannerImg1 from "../assets/R.jpeg";
-import BannerImg2 from "../assets/High-tech background with AI-inspired elements, futuristic lines, neural network visuals.png";
-import BannerImg3 from "../assets/Gemini_Generated_Image_674p7n674p7n674p.jpeg";
-import BannerImg4 from "../assets/OIP.jpeg";
-import DemoVideo from "../assets/mentora-web-vid.mp4";
+import BannerImg1 from "../assets/Gemini_Generated_Image_5flm3v5flm3v5flm.jpeg";
+import BannerImg2 from "../assets/f0383a37193dfc4ba83375708d1cd901.jpg";
+import BannerImg3 from "../assets/ai-circuit-board-innovation_1077802-56750.jpg";
+import BannerImg4 from "../assets/28.05.2025_09.02.58_REC.png";
+import DemoVideo from "../assets/video_2025-09-01_21-43-53.mp4";
 import Navigation from "../navbar/navigation";
 import Footer from "../../footer";
+import CustomCursor from "../navbar/Pages/customcursor.jsx";
+import { Cursor } from "react-simple-typewriter";
 
 
 
@@ -36,6 +38,7 @@ const Learn = () => {
     return (
         <>
             <Navigation/>
+            <CustomCursor/>
 
             <section className="officialDemo">
                 <div className="demoTxt">

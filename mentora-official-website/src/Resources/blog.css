@@ -7,7 +7,7 @@
     flex-direction: column;
     background-color: #fff;
     position: relative;
-    z-index: -1;
+    z-index: 9;
     overflow: hidden;
     margin-top: 120px;
     gap: 120px;
@@ -62,6 +62,17 @@
     font-weight: 600;
     font-family: "Mona Sans", sans-serif;
     color: #ff7b72;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.readArticle{
+    font-size: 13px;
+    font-weight: 500;
+    font-family: "Mona Sans", sans-serif;
+    color: #000;
+    text-decoration: underline;
 }
 
 .BheroTextContainer h4{
@@ -108,7 +119,7 @@
 .BheroRight{
     display: flex;
     width: 60%;
-    height: 100%;
+    height: auto;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
@@ -162,6 +173,7 @@
     border-radius: var(.375rem, 6px)!important;
     border: 2px solid #ff7b72;
     padding: 20px;
+    margin-bottom: 5px;
 }
 
 .leftNewsText{
@@ -366,6 +378,51 @@
 }
 
 
+/* Modal Popup */
+
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modalContent {
+  background: #fff;
+  max-width: 900px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+
+.modalHeader h2 {
+  margin: 0;
+}
+
+.modalBody {
+  margin-top: 20px;
+  line-height: 1.6;
+}
 
 
 
@@ -388,7 +445,8 @@
     }
 
     .BheroRightContainer .articleImg img {
-        height: 100%;
+        height: 80%;
+        border-radius: 20px;
     }
 
     .BheroRightTxt, .ni-bodyTxt {
@@ -494,6 +552,15 @@
 }
 
 @media screen and (max-width: 550px) {
+    .BheroLeft .articleImg img {
+        height: 400px;
+    }
+
+    .BheroTextContainer h4 {
+        font-size: 30px!important;
+        line-height: 30px !important;
+    }
+
     .BheroRight {
         gap: 60px;
     }

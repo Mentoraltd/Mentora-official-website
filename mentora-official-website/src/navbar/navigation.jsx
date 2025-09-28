@@ -4,6 +4,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineArrowForward } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +49,7 @@ const Navigation = () => {
         <>
             <section className='navContainer' id="mainNav">
                 <div className="companyLogo" id='MentoraHomeLogo'>
-                    <span className="logo">mentora</span>
+                    <Link to="/"><span className="logo">mentora</span></Link>
                 </div>
 
                 <div className="navListContainer">
@@ -61,9 +62,9 @@ const Navigation = () => {
                                 <div className="dropDown">
                                     <div className="leftDropDown">
                                         <ul>
-                                            <li className="dropDownList">Features</li>
-                                            <li className="dropDownList">Download</li>
-                                            <li className="dropDownList">Learn / Demo</li>
+                                            <Link to="/error"><li className="dropDownList">Features</li></Link>
+                                            <Link to="/download"><li className="dropDownList">Download</li></Link>
+                                            <Link to="/learn"><li className="dropDownList">Learn / Demo</li></Link>
                                         </ul>
                                     </div>
                                 </div>
@@ -78,8 +79,8 @@ const Navigation = () => {
                                 <div className="dropDown">
                                     <div className="leftDropDown">
                                         <ul>
-                                            <li className="dropDownList">Students</li>
-                                            <li className="dropDownList">Institutions</li>
+                                            <Link to="/students"><li className="dropDownList">Students</li></Link>
+                                            <Link to="/institution"><li className="dropDownList">Institutions</li></Link>
                                         </ul>
                                     </div>
                                 </div>
@@ -94,21 +95,20 @@ const Navigation = () => {
                                 <div className="dropDown">
                                     <div className="leftDropDown">
                                         <ul>
-                                            <li className="dropDownList">Blog</li>
-                                            <li className="dropDownList">Events</li>
-                                            <li className="dropDownList">Help Center</li>
-                                            <li className="dropDownList">Upcoming Features</li>
+                                            <Link to="/blog"><li className="dropDownList">Blog</li></Link>
+                                            <Link to="/events"><li className="dropDownList">Events</li></Link>
+                                            <Link to="/helpcenter"><li className="dropDownList">Help Center</li></Link>
                                         </ul>
                                     </div>
                                 </div>
                             )}
                         </li>
 
-                        <li className="navlist"><span>Pricing</span></li>
+                        <Link to="/pricing"><li className="navlist"><span>Pricing</span></li></Link>
                     </ul>
 
                     <div className="navCTAbutton">
-                        <li>Contact Sales</li>
+                        <li><a href="mailto:mentoraltd@gmail.com">Contact Sales</a> </li>
                         <div className="CtaButton">
                             <span className="PrimaryButtonWhiteText24">
                                 Download Mentora App <MdOutlineArrowForward />
@@ -131,9 +131,9 @@ const Navigation = () => {
                             </div> 
                             {mobileDropdown === 'product' && (
                                 <ul className="mobileDropdown">
-                                    <li className="dropDownList">Features</li>
-                                    <li className="dropDownList">Download</li>
-                                    <li className="dropDownList">Learn / Demo</li>
+                                    <Link to="/error"><li className="dropDownList">Features</li></Link>
+                                    <Link to="/download"><li className="dropDownList">Download</li></Link>
+                                    <Link to="/learn"><li className="dropDownList">Learn / Demo</li></Link>
                                 </ul>
                             )}
                         </li>
@@ -143,8 +143,8 @@ const Navigation = () => {
                             </div>
                             {mobileDropdown === 'education' && (
                                 <ul className="mobileDropdown">
-                                    <li className="dropDownList">Students</li>
-                                    <li className="dropDownList">Institutions</li>
+                                    <Link to="/students"><li className="dropDownList">Students</li></Link>
+                                    <Link to="/institution"><li className="dropDownList">Institutions</li></Link>
                                 </ul>
                             )}
                         </li>
@@ -154,18 +154,17 @@ const Navigation = () => {
                             </div>
                             {mobileDropdown === 'resource' && (
                                 <ul className="mobileDropdown">
-                                    <li className="dropDownList">Blog</li>
-                                    <li className="dropDownList">Events</li>
-                                    <li className="dropDownList">Help Center</li>
-                                    <li className="dropDownList">Upcoming Features</li>
+                                    <Link to="/blog"><li className="dropDownList">Blog</li></Link>
+                                    <Link to="/events"><li className="dropDownList">Events</li></Link>
+                                    <Link to="/helpcenter"><li className="dropDownList">Help Center</li></Link>
                                 </ul>
                             )}
                         </li>
-                        <li className="navlist"><span>Pricing</span></li>
+                        <Link to="/pricing"><li className="navlist"><span>Pricing</span></li></Link>
                     </ul>
 
                     <div className="navCTAbutton">
-                        <li>Contact Sales</li>
+                        <li><a href="mailto:mentoraltd@gmail.com">Contact Sales</a></li>
                         <div className="CtaButton">
                             <span className="PrimaryButtonWhiteText24">
                                 Download Mentora App <MdOutlineArrowForward />
