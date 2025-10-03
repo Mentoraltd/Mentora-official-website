@@ -256,11 +256,11 @@
 }
 
 .testimonial-nav.left {
-  left: 0;
+  left: -20px;
 }
 
 .testimonial-nav.right {
-  right: 0;
+  right: -20px;
 }
 
 .nav-button {

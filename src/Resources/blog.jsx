@@ -125,7 +125,7 @@ const Blogs = () => {
             </div>
             <div className="rightNewsForm">
                 <form name="newsletter" method="POST" data-netlify="true">
-                        <input type="hidden" name="newsletterform" value="newsletter" />
+                        <input type="hidden" name="form-name" value="newsletter" />
                         <input type="email" name="email" id="NewsletterEmail" placeholder="Your email address" />
                         <button type="submit" className="NewsSubmitBtn">Subscribe <IoIosArrowDown className="IoIosArrowDown"/> </button>
                     

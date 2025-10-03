@@ -284,6 +284,7 @@ const DownloadPage = () => {
             <form onSubmit={handleSendLink} className="cta-form" name="phoneForm" 
               method="POST" 
               data-netlify="true">
+                <input type="hidden" name="form-name" value="phoneForm" />
             <input
                 type="tel"
                 name="phone"
