@@ -1,0 +1,60 @@
+export const pricingData = {
+  plans: [
+    {
+      name: "Starter",
+      price: "$9 USD/month",
+      subText: "billed annually",
+      description: [
+        "Access to 10+ AI-curated courses",
+        "Study with AI Chatbot (limited to 50 questions/month)",
+        "Community discussion forums",
+        "Basic progress tracking",
+        "Email support 24/7",
+      ],
+      buttonText: "Start Learning",
+    },
+    {
+      name: "Pro",
+      price: "$24 USD/month",
+      subText: "billed annually",
+      description: [
+        "Access to all AI-curated courses",
+        "Unlimited AI Chatbot interactions",
+        "Personalized study recommendations via AI",
+        "Exclusive webinars & live workshops",
+        "Certificate of completion",
+        "Advanced progress tracking",
+        "Priority live chat support",
+      ],
+      buttonText: "Get Pro Access",
+    },
+    {
+      name: "Master",
+      price: "$49 USD/month",
+      subText: "billed annually",
+      description: [
+        "All Pro features",
+        "1-on-1 Mentorship with AI Study Coach",
+        "Custom AI-generated study plans",
+        "Early access to beta AI features",
+        "Dedicated human success advisor",
+        "Priority placement in new course launches",
+      ],
+      buttonText: "Join Master Program",
+    },
+    {
+      name: "Enterprise",
+      price: "$99 USD/month",
+      subText: "custom billing options available",
+      description: [
+        "Unlimited AI Chatbot access for teams",
+        "Custom AI content creation for your organization",
+        "Dedicated AI model fine-tuning for your needs",
+        "Team progress analytics dashboard",
+        "On-site workshops & corporate seminars",
+        "Dedicated enterprise support manager",
+      ],
+      buttonText: "Contact Sales",
+    },
+  ],
+};

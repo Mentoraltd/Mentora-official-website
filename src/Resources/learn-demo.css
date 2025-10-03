@@ -1,0 +1,107 @@
+.officialDemo{
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    margin: 150px auto;
+}
+
+.demoTxt{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+}
+
+.demoTxt h4{
+    font-size: 36px;
+    font-weight: 500;
+    font-family: "Mona Sans", sans-serif;
+}
+
+.demoTxt p{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Mona Sans", sans-serif;
+}
+
+video{
+    display: block;
+    width: 100%;
+    height: 250px;
+}
+
+.suggestedPlaylist{
+    width: 70%;
+    height: auto;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 160px;
+}
+
+.suggestedPlaylist h4{
+    font-size: 26px;
+    font-weight: 600;
+    font-family: "Mona Sans", sans-serif;
+}
+
+.playlistContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.SuggestedContainer{
+    width: 25%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.SuggestedContainer img{
+    width: 100%;
+    height: 150px;
+}
+
+.SuggestedContainer span{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Mona Sans", sans-serif; 
+    letter-spacing: 1.2px;  
+}
+
+
+@media screen and (max-width: 860px) {
+    .officialDemo {
+        flex-direction: column;
+    }
+
+    .demoTxt, .videoMain{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .officialDemo, .suggestedPlaylist{
+        width: 80%
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .playlistContainer {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .SuggestedContainer{
+        width: 100%;
+    }
+}

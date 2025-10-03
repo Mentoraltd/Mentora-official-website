@@ -1,0 +1,23 @@
+.errorCont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    margin: 120px 0;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .errorCont{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .errorCont{
+        flex-direction: column;
+    }
+}
