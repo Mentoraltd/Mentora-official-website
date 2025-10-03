@@ -1,7 +1,11 @@
 import React from "react";
 import './footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
+       const scrollTop = () => {
+          window.scrollTo({ top: 0, behavior: "auto" });
+        };
   return (
     <>
       <section className="footer">
@@ -19,11 +23,12 @@ const Footer = () => {
                 <header>Company</header>
 
                 <ul>
-                  <li>Term of Services</li>
-                  <li>Privacy Policy</li>
-                  <li>FAQ</li>
-                  <li>Resources</li>
-                  <li>Features</li>
+                  <Link to="/students" onClick={scrollTop}><li>Students</li></Link>
+                  <Link to="/institution" onClick={scrollTop}><li>Institution</li></Link>
+                  <Link to="/download" onClick={scrollTop}><li>Download</li></Link>
+                  <Link to="/blog" onClick={scrollTop}><li>Blog</li></Link>
+                  <Link to="/helpcenter" onClick={scrollTop}><li>HelpCenter</li></Link>
+                  <Link to="/pricing" onClick={scrollTop}><li>Pricing</li></Link>
                 </ul>
               </div>
               <div className="connect">

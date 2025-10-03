@@ -306,7 +306,7 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
                   <div className="innerTxt">
                     <div className="innerTxt_1">
                       <h6>Free</h6>
-                      <p>Get peace of mind with writing that’s mistake-free.</p>
+                      <p>Get access to a private tutor that transform your learning culture.</p>
                     </div>
                     <div className="innerTxt_2">
                       <div className="amount"><h6>$0</h6></div>
@@ -320,9 +320,10 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
                     </div>
                   </div>
                   <ul className="perks">
-                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Write without mistakes</li>
-                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> See your writing tone</li>
-                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Generate text with 100 AI prompts</li>
+                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Get access to an AI tutor</li>
+                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Limited Upload (Files, images)</li>
+                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Generate texts, solutions and Questions</li>
+                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> And more...</li>
                   </ul>
                 </div>
               </div>
@@ -351,9 +352,10 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
                   </div>
                   <ul className="perks">
                     <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Everything included in Free</li>
-                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> unlimited question generation</li>
+                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Gamified learning</li>
                     <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> deeper performance insights</li>
-                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> expert-verified solutions</li>
+                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Unlimited Custom Tutor Creation</li>
+                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Exam Readiness Prep</li>
                   </ul>
                 </div>
               </div>
@@ -377,7 +379,7 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
                     <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Everything included in Pro</li>
                     <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Unlimited members</li>
                     <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Confidential mode</li>
-                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Unlimited generative AI prompts</li>
+                    <li className="perksList"><FaRegCircleCheck className='FaRegCircleCheck' /> Unlimited Database for study Research</li>
                   </ul>
                 </div>
               </div>

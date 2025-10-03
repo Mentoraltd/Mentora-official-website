@@ -78,6 +78,8 @@ header{
     cursor: pointer;
     padding: 5px;
     transition: 0.2s ease-in-out;
+    color: #fff;
+    text-decoration: none;
 }
 
 .company li:hover{

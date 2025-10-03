@@ -11,6 +11,10 @@ const Navigation = () => {
     const [hoveredItem, setHoveredItem] = useState(null);
     const [mobileDropdown, setMobileDropdown] = useState(null);
 
+               const scrollTop = () => {
+                    window.scrollTo({ top: 0, behavior: "auto" });
+                    };
+
     const toggleNavbar = () => {
         setIsOpen(!isOpen);
         setMobileDropdown(null); // Close dropdowns when nav toggles
@@ -49,7 +53,7 @@ const Navigation = () => {
         <>
             <section className='navContainer' id="mainNav">
                 <div className="companyLogo" id='MentoraHomeLogo'>
-                    <Link to="/"><span className="logo">mentora</span></Link>
+                    <Link to="/" onClick={scrollTop}><span className="logo">mentora</span></Link>
                 </div>
 
                 <div className="navListContainer">
@@ -63,7 +67,7 @@ const Navigation = () => {
                                     <div className="leftDropDown">
                                         <ul>
                                             <Link to="/error"><li className="dropDownList">Features</li></Link>
-                                            <Link to="/download"><li className="dropDownList">Download</li></Link>
+                                            <Link to="/download" onClick={scrollTop}><li className="dropDownList">Download</li></Link>
                                             <Link to="/learn"><li className="dropDownList">Learn / Demo</li></Link>
                                         </ul>
                                     </div>
@@ -79,8 +83,8 @@ const Navigation = () => {
                                 <div className="dropDown">
                                     <div className="leftDropDown">
                                         <ul>
-                                            <Link to="/students"><li className="dropDownList">Students</li></Link>
-                                            <Link to="/institution"><li className="dropDownList">Institutions</li></Link>
+                                            <Link to="/students" onClick={scrollTop}><li className="dropDownList">Students</li></Link>
+                                            <Link to="/institution" onClick={scrollTop}><li className="dropDownList">Institutions</li></Link>
                                         </ul>
                                     </div>
                                 </div>
@@ -95,16 +99,16 @@ const Navigation = () => {
                                 <div className="dropDown">
                                     <div className="leftDropDown">
                                         <ul>
-                                            <Link to="/blog"><li className="dropDownList">Blog</li></Link>
+                                            <Link to="/blog" onClick={scrollTop}><li className="dropDownList">Blog</li></Link>
                                             <Link to="/events"><li className="dropDownList">Events</li></Link>
-                                            <Link to="/helpcenter"><li className="dropDownList">Help Center</li></Link>
+                                            <Link to="/helpcenter"> onClick={scrollTop}<li className="dropDownList">Help Center</li></Link>
                                         </ul>
                                     </div>
                                 </div>
                             )}
                         </li>
 
-                        <Link to="/pricing"><li className="navlist"><span>Pricing</span></li></Link>
+                        <Link to="/pricing" onClick={scrollTop}><li className="navlist"><span>Pricing</span></li></Link>
                     </ul>
 
                     <div className="navCTAbutton">
@@ -132,7 +136,7 @@ const Navigation = () => {
                             {mobileDropdown === 'product' && (
                                 <ul className="mobileDropdown">
                                     <Link to="/error"><li className="dropDownList">Features</li></Link>
-                                    <Link to="/download"><li className="dropDownList">Download</li></Link>
+                                    <Link to="/download" onClick={scrollTop}><li className="dropDownList">Download</li></Link>
                                     <Link to="/learn"><li className="dropDownList">Learn / Demo</li></Link>
                                 </ul>
                             )}
@@ -143,8 +147,8 @@ const Navigation = () => {
                             </div>
                             {mobileDropdown === 'education' && (
                                 <ul className="mobileDropdown">
-                                    <Link to="/students"><li className="dropDownList">Students</li></Link>
-                                    <Link to="/institution"><li className="dropDownList">Institutions</li></Link>
+                                    <Link to="/students" onClick={scrollTop}><li className="dropDownList">Students</li></Link>
+                                    <Link to="/institution" onClick={scrollTop}><li className="dropDownList">Institutions</li></Link>
                                 </ul>
                             )}
                         </li>
@@ -154,13 +158,13 @@ const Navigation = () => {
                             </div>
                             {mobileDropdown === 'resource' && (
                                 <ul className="mobileDropdown">
-                                    <Link to="/blog"><li className="dropDownList">Blog</li></Link>
+                                    <Link to="/blog" onClick={scrollTop}><li className="dropDownList">Blog</li></Link>
                                     <Link to="/events"><li className="dropDownList">Events</li></Link>
-                                    <Link to="/helpcenter"><li className="dropDownList">Help Center</li></Link>
+                                    <Link to="/helpcenter" onClick={scrollTop}><li className="dropDownList">Help Center</li></Link>
                                 </ul>
                             )}
                         </li>
-                        <Link to="/pricing"><li className="navlist"><span>Pricing</span></li></Link>
+                        <Link to="/pricing" onClick={scrollTop}><li className="navlist"><span>Pricing</span></li></Link>
                     </ul>
 
                     <div className="navCTAbutton">
