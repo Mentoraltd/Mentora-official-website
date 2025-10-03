@@ -464,6 +464,20 @@
   font-style: italic;
 }
 
+@media (max-width: 640px) {
+  .cta-title {
+      font-size: 1.4rem;
+  }
+
+  .features-title {
+    font-size: 1.2rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+}
+
 .cta-subtitle {
   font-size: 1.125rem;
   margin-bottom: 2rem;

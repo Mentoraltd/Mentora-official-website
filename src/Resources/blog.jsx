@@ -36,7 +36,7 @@ const Blogs = () => {
     
 
     if (!blogs || blogs.length === 0) {
-        return <p>No blogs yet.</p>;
+        return <p>Loading Blogs...</p>;
     }
 
     const [firstBlog, ...otherBlogs] = blogs;
@@ -124,8 +124,9 @@ const Blogs = () => {
                 <p>Discover tips, technical guides, and best practices in our weekly Newsletter.</p>
             </div>
             <div className="rightNewsForm">
-                <form action="" method="post">
+                <form name="newsletter" method="POST" data-netlify="true">
                     <label htmlFor="email">
+                        <input type="hidden" name="newsletterform" value="newsletter" />
                         <input type="email" name="email" id="NewsletterEmail" placeholder="Your email address" />
                         <button type="submit" className="NewsSubmitBtn">Subscribe <IoIosArrowDown className="IoIosArrowDown"/> </button>
                     </label>
