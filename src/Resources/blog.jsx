@@ -124,8 +124,7 @@ const Blogs = () => {
                 <p>Discover tips, technical guides, and best practices in our weekly Newsletter.</p>
             </div>
             <div className="rightNewsForm">
-                <form name="newsletter" method="POST" data-netlify="true">
-                        <input type="hidden" name="form-name" value="newsletter" />
+                <form name="newsletter" netlify>
                         <input type="email" name="email" id="NewsletterEmail" placeholder="Your email address" />
                         <button type="submit" className="NewsSubmitBtn">Subscribe <IoIosArrowDown className="IoIosArrowDown"/> </button>
                     

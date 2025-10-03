@@ -106,11 +106,6 @@ const DownloadPage = () => {
     setPhone("");
   };
 
-  useEffect(() => {
-    const timer = setInterval(() => next(), 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <>
         <Navigation/>
@@ -282,9 +277,7 @@ const DownloadPage = () => {
             </p>
 
             <form onSubmit={handleSendLink} className="cta-form" name="phoneForm" 
-              method="POST" 
-              data-netlify="true">
-                <input type="hidden" name="form-name" value="phoneForm" />
+              netlify>
             <input
                 type="tel"
                 name="phone"
