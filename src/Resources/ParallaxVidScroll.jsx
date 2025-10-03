@@ -1,5 +1,5 @@
 import React from "react";
-import ParallaxBox from "./ParallaxBox";
+import ParallaxBox from "./parallaxBox";
 import "./parallaxSection.css";
 import ParallaxVid1 from "./../assets/adaptivelearning.mp4";
 import ParallaxVid2 from "./../assets/smartstudy.mp4";
