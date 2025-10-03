@@ -125,16 +125,9 @@ const Blogs = () => {
             </div>
             <div className="rightNewsForm">
                 <form name="newsletter" method="POST" data-netlify="true">
-                    <label htmlFor="email">
                         <input type="hidden" name="newsletterform" value="newsletter" />
                         <input type="email" name="email" id="NewsletterEmail" placeholder="Your email address" />
                         <button type="submit" className="NewsSubmitBtn">Subscribe <IoIosArrowDown className="IoIosArrowDown"/> </button>
-                    </label>
-
-                    <div className="sendNewsletter">
-                        <input type="checkbox" name="check" id="NewsletterPermissionCheckbox" />
-                        <p>Yes please, I’d like MentoraLtd to use my information for personalized communications, targeted advertising and campaign effectiveness. See <span>MentoraLtd Privacy Statement</span> for more details.</p>
-                    </div>
                     
                 </form>
             </div>

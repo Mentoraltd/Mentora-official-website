@@ -161,14 +161,6 @@
   background-color: #d1d5db;
 }
 
-.toggle-btn.inactive {
-  background-color: #9ca3af;
-  color: black;
-}
-
-.toggle-btn.inactive:hover {
-  background-color: #6b7280;
-}
 
 .pricing-grid {
   display: none;

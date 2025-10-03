@@ -96,7 +96,7 @@ const PricingPage = () => {
         {/* --- HERO SECTION --- */}
         <section className="hero-section">
             <h1 className="hero-title">
-            Learn Smarter with Mentora: <br />AI Personalized Study Support at Your Fingertips
+            AI Personalized Study Support at Your Fingertips
             </h1>
             <p className="hero-subtitle">
             Start free today and experience the future of education with your personal AI Study Assistant.
@@ -124,7 +124,7 @@ const PricingPage = () => {
                 <button className="toggle-btn active">
                     Pay monthly
                 </button>
-                <button className="toggle-btn inactive">
+                <button className="toggle-btn">
                     Pay yearly (save 25%)*
                 </button>
                 </div>

@@ -189,8 +189,13 @@
 }
 .rightNewsForm form{
     display: flex;
-    flex-direction: column;
     gap: 15px;
+    width: 100%;
+    border: 1px solid #010409;
+    border-radius: 6px;
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .rightNewsForm label{
